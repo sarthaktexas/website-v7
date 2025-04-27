@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sarthak</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        max-height: 100vh;
+        overflow: none;
+        background: #ff680a;
+        color: #fff4db;
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 12px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 32px 0 0 0;
+        flex-direction: column;
+      }
+      .container {
+        width: 100%;
+        max-width: 370px;
+        margin-left: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      @media (max-width: 600px) {
+        .container {
+          max-width: 360px;
+          /*           margin-left: 12px;
+          padding-right: 16px; */
+        }
+/*                 body {
+                  font-size: 10px;
+          padding: 12px 0 0 0;
+        } */
+      }
+      h1,
+      h2 {
+        color: #fff4db;
+      }
+      .location,
+      .timestamp,
+      .projects-label {
+        color: #ffe095;
+        font-size: 0.98rem;
+        font-weight: 400;
+        margin: 4px 0 0 0;
+      }
+      .bio,
+      .get-in-touch {
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+      a {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: color 0.2s;
+      }
+      .projects-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 4px;
+        margin-bottom: 12px;
+      }
+      .projects-list p {
+        font-size: 1rem;
+        margin: 0;
+        line-height: 1.65;
+      }
+      .spare-time {
+        margin-top: 8px;
+        font-size: 1rem;
+      }
+      .timestamp {
+        font-size: 0.96rem;
+        margin-top: 5px;
+        color: #ffe095;
+      }
+      .copied-note {
+        margin-bottom: 12px;
+        font-size: 0.98rem;
+        color: #ffe095;
+        opacity: 0.6;
+        font-family: "Inter", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>sarthak</h1>
+        <div class="location">san antonio, texas</div>
+      </div>
+      <div class="bio">
+        biochemistry student at
+        <a href="https://utsa.edu" target="_blank" rel="noopener noreferrer"
+          >utsa</a
+        >. previously designer-developer. currently researching computational
+        chemistry problems in the
+        <a
+          href="https://larionovgroup.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >larionov group</a
+        >, but more interested in computational physical biochemistry. some
+        research i've been following regards predicting the kinetics of complex
+        protein folding mechanisms by modeling the electrostatics of
+        biomolecules.
+      </div>
+      <div class="get-in-touch">
+        get in touch:
+        <a
+          href="https://x.com/sarthaktexas"
+          target="_blank"
+          rel="noopener noreferrer"
+          >x.com</a
+        >
+        or <a href="mailto:hello@sarthakmohanty.me">email</a>
+      </div>
+      <div>
+        <div class="projects-label">where do i see myself in 5 years?</div>
+        <div class="projects-list">
+          <p>
+            i plan to graduate from medical school and enter a general surgery
+            residency program with the hope of pursuing a fellowship in trauma
+            surgery.
+          </p>
+        </div>
+      </div>
+      <div class="timestamp">updated april, 2025</div>
+      <div class="copied-note">
+        copied from
+        <a href="https://vedant.cv" target="_blank" rel="noopener noreferrer"
+          >vedant.cv</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
