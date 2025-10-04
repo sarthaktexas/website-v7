@@ -191,6 +191,10 @@
                 text-align: left;
                 min-width: auto;
                 margin-bottom: 10px;
+                /* Prevent descenders from getting visually clipped on mobile */
+                line-height: 1.4;
+                padding-bottom: 2px;
+                flex-shrink: 1;
             }
 
             body {
