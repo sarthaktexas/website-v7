@@ -224,7 +224,7 @@
 
         <div class="right-column">
             <div class="section">
-                <div class="section-label"><b>SARTHAK</br>MOHANTY</b></div>
+                <div class="section-label"><b>SARTHAK<br>MOHANTY</b></div>
                 <div class="section-content">
                     <div class="tagline">
                         <i>san antonio, texas</i>
@@ -269,5 +269,42 @@
             </div>
         </div>
     </div>
+    <script type="module">
+        import React from 'https://esm.sh/react@18.2.0';
+        import { createRoot } from 'https://esm.sh/react-dom@18.2.0/client';
+        import Balancer from 'https://esm.sh/react-wrap-balancer@1.1.5?deps=react@18.2.0';
+
+        const BalancedHTML = ({ html }) => (
+            React.createElement(
+                Balancer,
+                null,
+                React.createElement('span', { dangerouslySetInnerHTML: { __html: html } })
+            )
+        );
+
+        function balanceElement(element) {
+            if (!element) return;
+            const html = element.innerHTML;
+            const root = createRoot(element);
+            root.render(React.createElement(BalancedHTML, { html }));
+        }
+
+        const elementsToBalance = new Set();
+
+        const bio = document.querySelector('.bio');
+        if (bio) elementsToBalance.add(bio);
+
+        document.querySelectorAll('.section-content').forEach((el) => {
+            if (!el.querySelector('.tagline')) {
+                elementsToBalance.add(el);
+            }
+        });
+
+        document.querySelectorAll('.tagline').forEach((el) => {
+            elementsToBalance.add(el);
+        });
+
+        elementsToBalance.forEach((el) => balanceElement(el));
+    </script>
 </body>
 </html>
