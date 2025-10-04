@@ -70,8 +70,6 @@
             flex-shrink: 0;
             min-width: 120px;
             text-align: right;
-            /* Ensure slight left inset to prevent italic overhang clipping */
-            padding-left: 8px;
             overflow: visible;
         }
 
@@ -198,17 +196,27 @@
                 line-height: 1.4;
                 padding-bottom: 2px;
                 flex-shrink: 1;
-                /* Provide a left inset to avoid left-edge glyph clipping */
-                padding-left: 10px;
-                text-indent: 0.35ch;
+                /* Use pseudo-element spacer to avoid left-edge clipping without visible space */
+                padding-left: 0;
+                text-indent: 0;
                 letter-spacing: normal;
-                font-style: normal; /* avoid italic overhang clipping on mobile */
+                font-style: italic;
                 overflow: visible;
                 /* Workarounds for Safari/Blink italic overhang clipping in flex items */
                 text-shadow: 0 0 1px transparent;
-                transform: translateX(1px) translateZ(0);
+                transform: translateZ(0);
                 -webkit-font-smoothing: antialiased;
                 display: inline-block;
+            }
+
+            /* Pseudo-element spacer that expands paint area to the left
+               without moving text visually (negative margin cancels width) */
+            .section-label::before {
+                content: "";
+                display: inline-block;
+                width: 0.4ch;
+                margin-left: -0.4ch;
+                pointer-events: none;
             }
 
             body {
