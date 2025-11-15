@@ -176,6 +176,33 @@
             width: 100%;
         }
 
+        .research-in-progress {
+            position: relative;
+            cursor: help;
+        }
+
+        .research-in-progress::after {
+            content: 'in progress';
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            margin-bottom: 8px;
+            z-index: 1000;
+        }
+
+        .research-in-progress:hover::after {
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 40px 20px;
@@ -277,6 +304,14 @@
             <div class="section">
                 <div class="section-label">research</div>
                 <div class="section-content" style="display: flex; flex-direction: column; gap: 10px;">
+                    <div>
+                        <span class="research-in-progress" style="color: rgba(255, 255, 255, 0.7);">Identifying Atoms in Protein Density Maps via Multiscale Fourier Filtering and Gradient Field Analysis</span>
+                        <span class="acquisition">Mohanty, S. (2026)</span>
+                    </div>
+                    <div>
+                        <span class="research-in-progress" style="color: rgba(255, 255, 255, 0.7);">A Convolutional Neural Network for Predicting Local Structural Confidence in Membrane Proteins from B-Factor Signatures</span>
+                        <span class="acquisition">Mohanty, S. (2026)</span>
+                    </div>
                     <div>
                         <a href="https://utsacloud-my.sharepoint.com/:b:/g/personal/sarthak_mohanty_my_utsa_edu/EbhpiaFg0WVLo2Pg8HBJ8zYBKCfw-EsdrOPr70Nf4XVk-w?e=DZiIKx"
                             target="_blank" rel="noopener">Optimization of Full-Length PLCε Purification to Enable
