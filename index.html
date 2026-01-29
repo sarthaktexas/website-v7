@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sarthak</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
     </style>
     <style>
         * {
@@ -19,7 +19,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
             background-color: #fb6b0c;
             color: white;
             line-height: 1.4;
@@ -61,7 +61,7 @@
         }
 
         .section-label {
-            font-family: 'Instrument Serif', serif;
+            font-family: "Instrument Serif", serif;
             font-weight: 400;
             font-size: 18px;
             opacity: 0.9;
@@ -75,7 +75,7 @@
         }
 
         .section-label b {
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
             font-style: normal;
             text-transform: uppercase;
         }
@@ -106,7 +106,7 @@
 
         .section-content a::after,
         .bio a::after {
-            content: '';
+            content: "";
             position: absolute;
             width: 0;
             height: 1px;
@@ -157,7 +157,7 @@
         }
 
         .research-in-progress::after {
-            content: 'in progress';
+            content: "in progress";
             position: absolute;
             bottom: 100%;
             left: 0;
@@ -234,13 +234,18 @@
         span.unavailable {
             color: rgba(255, 255, 255, 0.7);
         }
+
+        .affiliations {
+            font-size: 10px;
+            font-style: normal;
+            opacity: 0.2;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="left-column">
-        </div>
+        <div class="left-column"></div>
 
         <div class="right-column">
             <!-- <div class="section">
@@ -279,21 +284,32 @@
 
             <div class="section">
                 <div class="section-label">research</div>
-                <div class="section-content" style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="section-content" style="display: flex; flex-direction: column; gap: 10px">
                     <!-- <div>
-                        <a href="https://utsacloud-my.sharepoint.com/:b:/g/personal/sarthak_mohanty_my_utsa_edu/EdIHGRGFi2VNj04xEInqngMB652Pn-xLHyn9_OVJQh0WBA?e=LkMoVH" target="_blank" rel="noopener">Computational Methods For Structural Confidence in Proteins</a>
-                        <span class="acquisition">Mohanty, S.</span>
+                        <div>A Variational Lagrangian–Hamiltonian Energy Framework Allows For Voxel-Resolved Protein Structural Rigidity Estimation</div>
+                        <span class="acquisition">Mohanty, S.<sup>1,2,3,4</sup> (2026), thesis</span>
+                    </div> -->
+                    <!-- <div>
+                        <div>
+                            Mammalian Expression Enables Functional Characterization of PLCε Catalytic Activities
+                        </div>
+                        <span class="acquisition">Mohanty, S.<sup>1,2,3,4</sup>, Mojidra, R.<sup>2,3</sup>, & Falzone, M.<sup>2,3,4</sup> (2026), poster</span>
                     </div> -->
                     <div>
-                        <div>Optimization of Full-Length PLCε Purification to Enable
-                            Studies of Ras-Mediated Oncogenic Signaling</div><span class="acquisition">Mohanty, S.,
-                            Mojidra, R., & Falzone, M. (2025), poster</span>
+                        <div>
+                            Optimization of Full-Length PLCε Purification to Enable Studies
+                            of Ras-Mediated Oncogenic Signaling
+                        </div>
+                        <span class="acquisition">Mohanty, S.<sup>1,2</sup>, Mojidra, R.<sup>2,3</sup>, & Falzone, M.<sup>2,3,4</sup> (2025), poster</span>
                     </div>
                     <div>
-                        <div>Formal Languages and Compiler Tools for Burden-Aware Genetic
-                            Circuit and Pathway Design</div>
+                        <div>
+                            Formal Languages and Compiler Tools for Burden-Aware Genetic
+                            Circuit and Pathway Design
+                        </div>
                         <span class="acquisition">Mohanty, S. (2025), proposal</span>
                     </div>
+                    <span class="affiliations"><sup>1</sup>Department of Chemistry, University of Texas at San Antonio, <sup>2</sup>Department of Biochemistry and Structural Biology, UT Health Science Center San Antonio, <sup>3</sup>Greehey Children's Cancer Research Institute, San Antonio, TX, <sup>4</sup>Mays Cancer Center, San Antonio, TX</span>
                 </div>
             </div>
 
@@ -319,14 +335,14 @@
                     cell culture. experienced in writing performant internal tooling to handle complex computational
                     workflows in chemistry and biochemistry applications.
                 </div>
-            </div>
+            </div> -->
 
-            <div class="section">
+            <!-- <div class="section">
                 <div class="section-label">goals</div>
                 <div class="section-content">
                     i plan to pursue an md-phd in computational and structural biochemistry. my goal is to bridge
                     protein dynamics research with translational medicine, especially in trauma care, where biochemical
-                    insight can sharpen rapid clinical decision-making.
+                    insight can sharpen rapid clinical decision-making. He is interested in understanding the structural and mechanistic details of protein-protein interactions, with a particular focus on the role of protein conformational changes in mediating these interactions.
                 </div>
             </div> -->
 
@@ -335,9 +351,8 @@
                 <div class="section-content">
                     get in touch:
                     <!-- <a href="https://x.com/sarintheworld" target="_blank">x.com</a> or -->
-                    <a
-                        href="mailto:hello@sarthakmohanty.me">email</a>.
-                        <!-- <br>
+                    <a href="mailto:hello@sarthakmohanty.me">email</a>.
+                    <!-- <br>
                     cv is <a
                         href="https://utsacloud-my.sharepoint.com/:b:/g/personal/sarthak_mohanty_my_utsa_edu/EcZIdU_Mm_9GvaDYrPJNRfAB-3jq8wPAlqqjqE0_a8u4AQ?e=REh0Cw"
                         target="_blank">here</a>. -->
