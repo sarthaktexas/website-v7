@@ -235,6 +235,15 @@
             font-style: normal;
             opacity: 0.2;
         }
+
+        .idea-title {
+            font-weight: 400;
+        }
+
+        .idea-description {
+            margin-top: 4px;
+            opacity: 0.85;
+        }
     </style>
 </head>
 
@@ -244,9 +253,9 @@
             <div class="section">
                 <div class="section-label">about</div>
                 <div class="bio">
-                    I study the structural biology of phospholipase C epsilon (PLCε), a signaling protein frequently dysregulated in cancers. This work is part of a larger effort in the Falzone lab to understand the regulatory role of phospholipases in cellular signaling pathways and how these mechanisms may eventually be targeted therapeutically.
+                    Most recently, I worked on the structural biology of phospholipase C epsilon (PLCε), a signaling protein frequently dysregulated in cancers. This work was part of a larger effort in the Falzone lab to understand the regulatory role of phospholipases in cellular signaling pathways and how these mechanisms may eventually be targeted therapeutically.
                     <br /><br />
-                    My most recent role was as a software engineer at Hack Club Bank, where I was part of a small team of developers that helped build a financial platform for students and nonprofits to raise and manage finances transparently. Before that, I was a designer-developer at Hack Club, where I helped build tools and experiences for students to build projects and learn to code.
+                    Before that, I was a software engineer at Hack Club Bank, where I was part of a small team of developers that helped build a financial platform for students and nonprofits to raise and manage finances transparently. Prior to that, I was a designer-developer at Hack Club, where I helped build tools and experiences for students to build projects and learn to code.
                     <br /><br />
                     I attended the University of Texas at San Antonio, where I earned a BS in biochemistry and focused on biosynthetic organic chemistry and computational biophysics. I am grateful to have gotten my start in research in an organic chemistry group on campus. I also learned small molecule X-ray crystallography from Dr. Hadi Arman at that time. After those experiences, I continued my research career working with Dr. Maria Falzone and Dr. Rahul Mojidra on the structure and function of PLCε using cryo-electron microscopy and fluorescence spectroscopy. For my thesis, I worked on mathematical methods to improve macromolecular structure modeling from cryo-EM density maps. I was co-advised by Dr. Maria Falzone and Dr. Hadi Arman for this work.
                 </div>
@@ -256,7 +265,7 @@
                 <div class="section-label">research</div>
                 <div class="section-content" style="display: flex; flex-direction: column; gap: 10px">
                     <div>
-                        <div>A Gradient Magnitude-Based Reliability Metric for Cryo-EM Density Maps Decouples Placement Confidence from Local Resolution
+                        <div>A Map-Only Framework for Predicting Residue Placement Confidence During Cryo-EM Model Building
                             </div>
                         <span class="acquisition">Mohanty, S.<sup>1</sup> (2026), undergraduate thesis, manuscript in preparation</span>
                     </div>
@@ -304,6 +313,41 @@
                     <span class="affiliations"><sup>1</sup>Department of Chemistry, University of Texas at San Antonio, <sup>2</sup>Department of Biochemistry and Structural Biology, UT Health Science Center San Antonio, <sup>3</sup>Greehey Children's Cancer Research Institute, San Antonio, TX, <sup>4</sup>Mays Cancer Center, San Antonio, TX</span>
                 </div>
             </div>
+
+            <!-- <div class="section">
+                <div class="section-label">in progress</div>
+                <div class="section-content" style="display: flex; flex-direction: column; gap: 20px">
+                    <p>I've long been interested in the relationship between structure and function, and how to use computational methods to understand and predict this connectivity. I'm currently working on several projects to explore this relationship in more detail.</p>
+                    <div>
+                        <div class="idea-title">Can directional map reliability improve cryo-EM model building?</div>
+                        <p class="idea-description">Directional FSC, 3D FSC, and local-resolution maps are now routine diagnostics in cryo-EM, but they rarely feed back into refinement. I'm exploring how to convert directional confidence into anisotropic positional restraints during model building, so fitting software weights the map less along directions where reliability is known to be poor.</p>
+                    </div>
+                    <div>
+                        <div class="idea-title">Is reproducible asymmetry in symmetric assemblies biologically meaningful?</div>
+                        <p class="idea-description">Many proteins assemble into nominally symmetric oligomers, yet independent structures often show the same subunit-to-subunit differences. I'm exploring whether that persistent asymmetry reflects sequence-encoded specialization rather than crystal-packing artifacts: whether it recurs across independent depositions, clusters near active sites, tracks evolutionary conservation, and is recapitulated by structure-prediction models.</p>
+                    </div>
+                    <div>
+                        <div class="idea-title">Can evolutionary information predict principal conformational motions?</div>
+                        <p class="idea-description">Experimentally observed protein motions may leave signatures in sequence. I'm exploring whether evolutionary information from multiple sequence alignments can predict principal conformational motions, compared against cryo-EM ensembles and normal-mode calculations.</p>
+                    </div>
+                    <div>
+                        <div class="idea-title">Can cryo-EM map fluctuations reveal cryptic allostery?</div>
+                        <p class="idea-description">Allosteric regulation often involves distant sites that are not obvious from a static structure. I'm exploring whether local fluctuations in cryo-EM maps predict regulatory sites before ligands or effectors have been observed in the structure.</p>
+                    </div>
+                    <div>
+                        <div class="idea-title">Do structure-prediction embeddings organize by catalytic mechanism?</div>
+                        <p class="idea-description">Structure-prediction models learn rich representations of protein structure without explicit chemistry labels. I'm exploring whether the latent space of those embeddings spontaneously clusters enzymes by catalytic mechanism when applied across thousands of unrelated enzymes.</p>
+                    </div>
+                    <div>
+                        <div class="idea-title">Do independently evolved enzymes converge in electrostatic environment?</div>
+                        <p class="idea-description">Unrelated proteins that catalyze the same reaction are known to share key active-site residues. I'm exploring whether convergence extends further: whether independently evolved enzymes performing identical chemistry also converge in electrostatic potential, local dielectric environment, and residue interaction networks around the active site.</p>
+                    </div>
+                    <div>
+                        <div class="idea-title">Can active-site hydration descriptors improve kcat prediction?</div>
+                        <p class="idea-description">Ordered waters at enzyme active sites can be essential to catalysis, but measured kcat values carry heavy experimental confounders. I'm exploring a narrower question: whether network descriptors of active-site hydration improve prediction of catalytic rate beyond what existing structural descriptors already capture.</p>
+                    </div>
+                </div>
+            </div> -->
 
             <div class="section">
                 <div class="section-label">email</div>
