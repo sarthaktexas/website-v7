@@ -317,7 +317,7 @@
                         <p>Currently, I work on the structure and function of complement component 1q-like (C1QL) proteins, which help neurons in the brain form and maintain the chemical junctions between them. My work in the Ressl lab aims to understand how these proteins assemble into the complexes that engage their receptors which are genetically linked to schizophrenia, bipolar disorder, and addiction. Because so many approved drugs act on this family of receptors, a structural picture of this interaction could point toward new treatments for psychiatric disorders that remain difficult to manage.</p>
                         <figure>
                             <canvas class="figure" data-anim="c1ql" aria-hidden="true"></canvas>
-                            <figcaption><span class="fig-label">Figure 1.</span> <span class="cue" data-cue="c1ql-ligand">C1QL trimers pair into hexamers that are secreted into the synaptic cleft and anchor to the presynaptic membrane.</span> <span class="cue" data-cue="c1ql-receptor">One binds the N-terminal domain of an adhesion G protein-coupled receptor (aGPCR)</span> <span class="cue" data-cue="c1ql-synapse">and pulls the postsynaptic membrane closer; its presynaptic partner (dashed) is not yet known.</span> <span class="cue" data-cue="c1ql-iglur">Others are captured by presynaptic neurexin-3 and bind kainate receptors (KARs), tetrameric ionotropic glutamate receptors, then link into higher-order assemblies (here an 18-mer) that cluster KARs at the synapse;</span> <span class="cue" data-cue="c1ql-ions">these channels open on glutamate binding and admit cations, mainly Na⁺ with some Ca²⁺.</span> aGPCRs belong to the G protein-coupled receptor superfamily, the target of roughly a third of approved drugs.</figcaption>
+                            <figcaption><span class="fig-label">Figure 1.</span> Left, a close-up of the synapse boxed at right, where an axon terminal of one neuron meets a dendritic spine of another. <span class="cue" data-cue="c1ql-ligand">C1QL trimers pair into hexamers that are secreted into the synaptic cleft and anchor to the presynaptic membrane.</span> <span class="cue" data-cue="c1ql-receptor">One binds the N-terminal domain of an adhesion G protein-coupled receptor (aGPCR)</span> <span class="cue" data-cue="c1ql-synapse">and pulls the postsynaptic membrane closer; its presynaptic partner (dashed) is not yet known.</span> <span class="cue" data-cue="c1ql-iglur">Others are captured by presynaptic neurexin-3 and bind kainate receptors (KARs), tetrameric ionotropic glutamate receptors, then link into higher-order assemblies (here an 18-mer) that cluster KARs at the synapse;</span> <span class="cue" data-cue="c1ql-ions">these channels open on glutamate binding and conduct monovalent cations (Na⁺ flowing in, K⁺ flowing out) and, in some subunit forms, divalent Ca²⁺.</span> aGPCRs belong to the G protein-coupled receptor superfamily, the target of roughly a third of approved drugs.</figcaption>
                         </figure>
                     </div>
                     <div class="project">
@@ -493,9 +493,10 @@
                 pts.forEach(([x, y]) => ctx.lineTo(x, y));
             }
 
-            // C1QL hexamers (two trimers joined at their N-termini) span the synaptic cleft. Left: one binds an aGPCR and pulls the
-            // postsynaptic membrane closer; its presynaptic partner is not yet known (dashed). Right: hexamers captured by
-            // presynaptic neurexin-3 bind kainate receptors (KARs) and link into an 18-mer that clusters them.
+            // Close-up of a synapse, tied to a zoomed-out view of the two neurons it joins. C1QL hexamers (two trimers joined at
+            // their N-termini) span the cleft: one binds an aGPCR and pulls the postsynaptic membrane closer, its presynaptic
+            // partner not yet known (dashed); others, captured by presynaptic neurexin-3, bind kainate receptors (KARs) and link
+            // into an 18-mer that clusters them.
             function c1ql() {
                 const P = 12, pre = [0.05, 0.15], post = [0.6, 0.7], L = 0.06;
                 const dockY = 0.29, x0 = 0.21, step = 0.03, kx = [0.615, 0.72, 0.825];
@@ -566,6 +567,86 @@
                     }
                 }
 
+                // Zoomed-out view: one neuron's axon terminal meets a dendritic spine of another. Returns the synapse position.
+                function neurons(ctx, px, τ) {
+                    const bez = (a, b, c) =>
+                        Array.from({ length: 17 }, (_, i) => {
+                            const u = i / 16, p = (1 - u) ** 2, q = 2 * u * (1 - u), r = u * u;
+                            return [p * a[0] + q * b[0] + r * c[0], p * a[1] + q * b[1] + r * c[1]];
+                        });
+                    const axon = bez([-0.21, -0.26], [-0.07, -0.13], [0.02, -0.03]);
+                    const cells = [
+                        {
+                            somas: [[0.26, 0.31, 0.065], [0.02, 0.09, 0.028]],
+                            branches: [
+                                [bez([-0.42, 0.13], [0, 0.17], [0.26, 0.31]), 0.03],
+                                [[[0.02, 0.09], [0.02, 0.2]], 0.013],
+                                [[[0.26, 0.31], [0.4, 0.43]], 0.02],
+                                [[[0.26, 0.31], [0.44, 0.21]], 0.018],
+                                [[[0.26, 0.31], [0.19, 0.47]], 0.016],
+                            ],
+                        },
+                        {
+                            somas: [[-0.22, -0.3, 0.06], [0.02, -0.005, 0.045]],
+                            branches: [
+                                [axon, 0.014],
+                                [[[-0.22, -0.3], [-0.32, -0.45]], 0.014],
+                                [[[-0.22, -0.3], [-0.11, -0.46]], 0.012],
+                                [[[-0.22, -0.3], [-0.4, -0.24]], 0.012],
+                            ],
+                        },
+                    ];
+                    // Outline, then hollow out and tint the interior, so each neuron reads as one membrane-bound cell.
+                    const pass = (cell, grow) => {
+                        for (const [x, y, r] of cell.somas) {
+                            disc(ctx, x, y, r + grow);
+                            ctx.fill();
+                        }
+                        for (const [pts, w] of cell.branches) {
+                            polyline(ctx, pts);
+                            ctx.lineWidth = w + 2 * grow;
+                            ctx.stroke();
+                        }
+                    };
+                    ctx.lineCap = ctx.lineJoin = "round";
+                    for (const cell of cells) {
+                        ctx.fillStyle = ctx.strokeStyle = ink(0.9);
+                        pass(cell, 1.3 * px);
+                        ctx.globalCompositeOperation = "destination-out";
+                        ctx.fillStyle = ctx.strokeStyle = "#000";
+                        pass(cell, 0);
+                        ctx.globalCompositeOperation = "source-over";
+                        ctx.fillStyle = ctx.strokeStyle = ink(0.07);
+                        pass(cell, 0);
+                        const [x, y, r] = cell.somas[0];
+                        disc(ctx, x, y, 0.45 * r);
+                        solid(ctx, 0.12, 0.6, px);
+                    }
+                    ctx.lineCap = "butt";
+                    ctx.lineJoin = "miter";
+
+                    // Synaptic vesicles in the terminal; an action potential arrives just as the channels open.
+                    ctx.lineWidth = px;
+                    ctx.strokeStyle = ink(0.6);
+                    for (const [dx, dy] of [[-0.018, -0.012], [0.004, -0.022], [0.02, -0.004], [-0.006, 0.008]]) {
+                        disc(ctx, 0.02 + dx, -0.005 + dy, 0.0075);
+                        ctx.stroke();
+                    }
+                    const q = phase(τ, 5.4, 6.4);
+                    if (q > 0 && q < 1) {
+                        disc(ctx, ...axon[Math.round(q * 16)], 0.011);
+                        ctx.fillStyle = ink(0.9 * Math.min(1, q * 6, (1 - q) * 6));
+                        ctx.fill();
+                    }
+                    const glow = phase(τ, 6.4, 6.8) * (1 - phase(τ, 9.0, 9.6));
+                    if (glow > 0) {
+                        disc(ctx, 0.02, 0.09, 0.028);
+                        ctx.fillStyle = ink(0.35 * glow);
+                        ctx.fill();
+                    }
+                    return [0.02, 0.05];
+                }
+
                 return {
                     still: 7.5,
                     period: P,
@@ -576,7 +657,7 @@
                         [4.6, 6.5, "c1ql-iglur"],
                         [6.5, 9.4, "c1ql-ions"],
                     ],
-                    draw(ctx, t, dt, px, W) {
+                    closeup(ctx, t, px, W) {
                         const τ = t % P;
                         const off = (W - 1) / 2, dL = Math.min(0.35, off / 2);
                         const out = (a, b) => 1 - ease(phase(τ, a, b));
@@ -717,6 +798,52 @@
                             ctx.strokeStyle = ink(0.7 * (1 - s));
                             ctx.stroke();
                         }
+
+                        // Cytoplasm of both neurons, laid behind everything drawn so far.
+                        ctx.globalCompositeOperation = "destination-over";
+                        ctx.fillStyle = ink(0.07);
+                        ctx.fillRect(-off - 1, -1, W + 2, 1 + (pre[0] + pre[1]) / 2);
+                        ctx.beginPath();
+                        for (let x = -off - 0.02; x <= W - off + 0.02; x += 0.005) ctx.lineTo(x, (post[0] + post[1]) / 2 - liftAt(x));
+                        ctx.lineTo(W - off + 0.02, 2);
+                        ctx.lineTo(-off - 0.02, 2);
+                        ctx.fill();
+                        ctx.globalCompositeOperation = "source-over";
+                    },
+                    draw(ctx, t, dt, px, W) {
+                        const τ = t % P, pw = Math.min(0.95, W * 0.3);
+                        const box = [0.03, 0.05, W - pw - 0.09, 0.9], k = Math.min(box[3], box[2] / 1.9);
+
+                        ctx.save();
+                        ctx.beginPath();
+                        ctx.rect(...box);
+                        ctx.clip();
+                        ctx.translate(box[0], box[1] + (box[3] - k) / 2);
+                        ctx.scale(k, k);
+                        this.closeup(ctx, t, px / k, box[2] / k);
+                        ctx.restore();
+
+                        const s = Math.min(1, pw / 0.95), cx = W - pw / 2 - 0.02;
+                        ctx.save();
+                        ctx.translate(cx, 0.5);
+                        ctx.scale(s, s);
+                        const [sx, sy] = neurons(ctx, px / s, τ);
+                        ctx.restore();
+
+                        // Frame the close-up and tie it back to the synapse between the two neurons.
+                        const x = cx + s * sx, y = 0.5 + s * sy, dw = 0.06 * s, dh = (dw * box[3]) / box[2];
+                        ctx.lineWidth = px;
+                        ctx.setLineDash([3 * px, 3 * px]);
+                        ctx.strokeStyle = ink(0.35);
+                        ctx.strokeRect(...box);
+                        ctx.strokeRect(x - dw, y - dh, 2 * dw, 2 * dh);
+                        ctx.beginPath();
+                        ctx.moveTo(x - dw, y - dh);
+                        ctx.lineTo(box[0] + box[2], box[1]);
+                        ctx.moveTo(x - dw, y + dh);
+                        ctx.lineTo(box[0] + box[2], box[1] + box[3]);
+                        ctx.stroke();
+                        ctx.setLineDash([]);
                     },
                 };
             }
@@ -874,7 +1001,17 @@
                         const sink = depth * ease(phase(st, 6.8, 9.4));
                         const D = st < 9.4 ? sink : depth * (1 - ease(phase(st, 9.4, 9.8)));
                         const line = [];
-                        for (let y = -0.05; y <= H + 0.05; y += 0.004) line.push([X0 + D * Math.exp(-(((y - yc) / w) ** 4)), y]);
+                        // The cell's surface is an arc of a large circle whose leftmost point is (X0, yc).
+                        const Rcell = 0.7;
+                        for (let y = -0.05; y <= H + 0.05; y += 0.004) {
+                            line.push([X0 + Rcell - Math.sqrt(Rcell ** 2 - (y - yc) ** 2) + D * Math.exp(-(((y - yc) / w) ** 4)), y]);
+                        }
+                        ctx.beginPath();
+                        for (const [x, y] of line) ctx.lineTo(x, y);
+                        ctx.lineTo(W + 1, H + 0.05);
+                        ctx.lineTo(W + 1, -0.05);
+                        ctx.fillStyle = ink(0.07);
+                        ctx.fill();
                         bilayer(ctx, px, line, false);
 
                         // Drug target inside the cell, with a pocket facing the incoming drug.
@@ -896,6 +1033,12 @@
                                 const circle = [];
                                 for (let i = 0; i < 96; i++) circle.push([cx + rv * Math.cos((i * TAU) / 96), cy + rv * Math.sin((i * TAU) / 96)]);
                                 ctx.globalAlpha = alpha * (1 - phase(τs, 11.0, 12.0));
+                                // The vesicle lumen is topologically outside the cell, so it carries no cytoplasm tint.
+                                ctx.globalCompositeOperation = "destination-out";
+                                disc(ctx, cx, cy, rv);
+                                ctx.fillStyle = "#000";
+                                ctx.fill();
+                                ctx.globalCompositeOperation = "source-over";
                                 bilayer(ctx, px, circle, true);
                                 ctx.globalAlpha = alpha;
                             }
@@ -1095,6 +1238,12 @@
                             ctx.stroke();
                         }
                     }
+
+                    // Cytoplasm below the membrane, laid behind everything drawn so far.
+                    ctx.globalCompositeOperation = "destination-over";
+                    ctx.fillStyle = ink(0.07);
+                    ctx.fillRect(-1, (yOut + yIn) / 2, LW + 2, 2);
+                    ctx.globalCompositeOperation = "source-over";
                 }
 
                 // Union of two circles of radius r centred at x ± s (or y ± s when vertical).
@@ -1159,7 +1308,7 @@
 
                     for (const [x, y] of cells) {
                         blob(ctx, x, y, R, s, vert);
-                        solid(ctx, 0.06, 0.9, 1.4 * px);
+                        solid(ctx, 0.07, 0.9, 1.4 * px);
                     }
 
                     // ER wrapped around the nucleus; it and the resting proteins are redrawn in the daughter as the view follows it.
