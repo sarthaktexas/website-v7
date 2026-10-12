@@ -361,7 +361,7 @@
                         <p>Currently, I work on the structure and function of complement component 1q-like (C1QL) proteins, which help neurons in the brain form and maintain the chemical junctions between them. My work in the Ressl lab aims to understand how these proteins assemble into the complexes that engage their receptors which are genetically linked to schizophrenia, bipolar disorder, and addiction. Because so many approved drugs act on this family of receptors, a structural picture of this interaction could point toward new treatments for psychiatric disorders that remain difficult to manage.</p>
                         <figure>
                             <canvas class="figure" data-anim="c1ql" aria-hidden="true"></canvas>
-                            <figcaption><span class="fig-label">Figure 1.</span> <span class="level"><button type="button" data-level="plain" aria-pressed="true">plain</button> / <button type="button" data-level="tech" aria-pressed="false">technical</button></span> <span class="plain">Left, a close-up of the chemical junction called a synapse boxed at right, where the end of one neuron meets the start of another. <span class="cue" data-cue="c1ql-ligand">C1QL proteins freely exist in the junction and anchor both sides of the junction through velcro proteins.</span> <span class="cue" data-cue="c1ql-receptor">One side binds to a cell surface receptor on the receiving side</span> <span class="cue" data-cue="c1ql-synapse">and pulls the two sides of the junction closer together, while its other side holds onto velcro proteins on the sending side.</span> <span class="cue" data-cue="c1ql-iglur">Other C1QL proteins are captured by a different set of velcro proteins and bind ion channels on the receiving side to form the chemical junction.</span> <span class="cue" data-cue="c1ql-ions">When these channels open, they conduct ions to allow signals to pass between neurons.</span> The receptor that C1QL proteins bind to on the left belongs to a superfamily that is the target of roughly a third of approved drugs.</span><span class="tech">Left, a close-up of the synapse boxed at right, where an axon terminal of one neuron meets a dendritic spine of another. <span class="cue" data-cue="c1ql-ligand">C1QL trimers pair into hexamers that are secreted into the synaptic cleft and anchor to the presynaptic membrane.</span> <span class="cue" data-cue="c1ql-receptor">One binds the N-terminal domain of an adhesion G protein-coupled receptor (aGPCR)</span> <span class="cue" data-cue="c1ql-synapse">and pulls the postsynaptic membrane closer, while its other end is held presynaptically by a neurexin or pentraxin.</span> <span class="cue" data-cue="c1ql-iglur">Others are captured by presynaptic neurexin-3 and bind kainate receptors (KARs), tetrameric ionotropic glutamate receptors, then link into higher-order assemblies (here an 18-mer) that cluster KARs at the synapse;</span> <span class="cue" data-cue="c1ql-ions">these channels open on glutamate binding and conduct monovalent cations (Na⁺ flowing in, K⁺ flowing out) and, in some subunit forms, divalent Ca²⁺.</span> aGPCRs belong to the G protein-coupled receptor superfamily, the target of roughly a third of approved drugs.</span></figcaption>
+                            <figcaption><span class="fig-label">Figure 1.</span> <span class="level"><button type="button" data-level="plain" aria-pressed="true">plain</button> / <button type="button" data-level="tech" aria-pressed="false">technical</button></span> <span class="plain">Left, a close-up of the chemical junction called a synapse boxed at right, where the end of one neuron meets the start of another. <span class="cue" data-cue="c1ql-ligand">C1QL proteins freely exist in the junction and anchor both sides of the junction through velcro proteins.</span> <span class="cue" data-cue="c1ql-receptor">One side binds to a cell surface receptor on the receiving side,</span> <span class="cue" data-cue="c1ql-synapse">lining the two sides of the junction up and gathering other proteins around the receptor, while its other side holds onto velcro proteins on the sending side.</span> <span class="cue" data-cue="c1ql-iglur">Other C1QL proteins are captured by a different set of velcro proteins and bind ion channels on the receiving side to form the chemical junction.</span> <span class="cue" data-cue="c1ql-ions">When these channels open, they conduct ions to allow signals to pass between neurons.</span> The receptor that C1QL proteins bind to on the left belongs to a superfamily that is the target of roughly a third of approved drugs.</span><span class="tech">Left, a close-up of the synapse boxed at right, where an axon terminal of one neuron meets a dendritic spine of another. <span class="cue" data-cue="c1ql-ligand">C1QL trimers pair into hexamers that are secreted into the synaptic cleft and anchor to the presynaptic membrane.</span> <span class="cue" data-cue="c1ql-receptor">One binds the N-terminal domain of an adhesion G protein-coupled receptor (aGPCR),</span> <span class="cue" data-cue="c1ql-synapse">aligning the postsynaptic membrane with the presynaptic membrane and organizing the proteins around the receptor, while its other end is held presynaptically by a neurexin or pentraxin.</span> <span class="cue" data-cue="c1ql-iglur">Others are captured by presynaptic neurexin-3 and bind kainate receptors (KARs), tetrameric ionotropic glutamate receptors, then link into higher-order assemblies (here an 18-mer) that cluster KARs at the synapse;</span> <span class="cue" data-cue="c1ql-ions">these channels open on glutamate binding and conduct monovalent cations (Na⁺ flowing in, K⁺ flowing out) and, in some subunit forms, divalent Ca²⁺.</span> aGPCRs belong to the G protein-coupled receptor superfamily, the target of roughly a third of approved drugs.</span></figcaption>
                         </figure>
                     </div>
                     <div class="project">
@@ -540,11 +540,12 @@
             }
 
             // Close-up of a synapse, tied to a zoomed-out view of the two neurons it joins. C1QL hexamers (two trimers joined at
-            // their N-termini) span the cleft: one, held by a neurexin or pentraxin on the presynaptic surface, binds an aGPCR and
-            // pulls the postsynaptic membrane closer; others, captured by presynaptic neurexin-3, bind kainate receptors (KARs) and link
-            // into an 18-mer that clusters them.
+            // their N-termini) span the cleft: one, held by a neurexin or pentraxin on the presynaptic surface, binds an aGPCR,
+            // bringing the whole wavy postsynaptic membrane into register with the presynaptic one and gathering membrane proteins around
+            // the receptor; others, captured by presynaptic neurexin-3, bind kainate receptors (KARs) and link into an 18-mer that
+            // clusters them.
             function c1ql() {
-                const P = 12, pre = [0.05, 0.15], post = [0.6, 0.7], L = 0.06;
+                const P = 12, pre = [0.05, 0.15], post = [0.6, 0.7], amp = 0.026;
                 const dockY = 0.29, x0 = 0.21, step = 0.03, kx = [0.615, 0.72, 0.825];
 
                 // Pivot at the N-terminal junction, with a trimer of globular heads 0.05 out along the axis at each end.
@@ -714,15 +715,22 @@
                             ease(phase(τ, 4.6, 5.8)) * out(9.6, 10.9),
                         ];
                         const grab = ease(phase(τ, 2.1, 2.9)) * out(10.2, 10.7);
-                        const pull = ease(phase(τ, 3.2, 4.6)) * out(9.4, 10.4);
+                        const align = ease(phase(τ, 3.2, 4.2)) * out(9.4, 10.4);
+                        const gather = ease(phase(τ, 3.8, 4.6)) * out(9.4, 10.4);
                         const b1 = phase(τ, 2.8, 3.1) * (1 - phase(τ, 10.1, 10.4));
                         const b2 = phase(τ, 3.9, 4.2) * (1 - phase(τ, 10.1, 10.4));
                         const b3 = phase(τ, 6.1, 6.4) * (1 - phase(τ, 9.4, 9.7));
                         const link = phase(τ, 5.6, 6.0) * (1 - phase(τ, 9.3, 9.6));
                         const cluster = ease(phase(τ, 5.0, 6.3)) * out(9.6, 10.9);
                         const open = phase(τ, 6.4, 6.8) * (1 - phase(τ, 9.0, 9.4));
-                        const liftAt = (x) => L * pull * Math.exp(-(((x - 0.3 + dL) / 0.26) ** 2));
+                        // The postsynaptic membrane undulates until the C1QL bridge at the aGPCR flattens it into register.
+                        const rc = 0.3 - dL;
+                        const liftAt = (x) => amp * (0.6 * Math.sin(7 * x + 0.5 * t) + 0.4 * Math.sin(13 * x - 0.4 * t + 1)) * (1 - align);
                         const lift = (x) => liftAt(x - dL), liftR = (x) => liftAt(x + dL);
+                        // Membrane proteins drift through the postsynaptic membrane, then line up on either side of the aGPCR.
+                        const mp = [[-0.3, -0.15], [-0.19, -0.12], [0.21, 0.125], [0.33, 0.155]].map(
+                            ([from, to], i) => rc + lerp(from + 0.02 * Math.sin(t * 0.5 + 2 * i), to, gather),
+                        );
                         const gx = [
                             lerp(0.5 + 0.012 * Math.sin(t * 0.8), kx[0], cluster),
                             kx[1] + 0.006 * Math.sin(t * 0.7 + 1) * (1 - d[1]),
@@ -732,7 +740,7 @@
                         ctx.translate(off, 0.07);
                         const xs = [];
                         for (let x = 0.025 - Math.ceil(off / 0.04) * 0.04; x < W - off; x += 0.04) xs.push(x);
-                        const busy = [[0.19 - dL, 0.41 - dL], ...gx.map((x) => [x + dL - 0.045, x + dL + 0.045])];
+                        const busy = [[0.19 - dL, 0.41 - dL], ...gx.map((x) => [x + dL - 0.045, x + dL + 0.045]), ...mp.map((x) => [x - 0.022, x + 0.022])];
                         const postXs = xs.filter((x) => !busy.some(([a, b]) => x > a && x < b));
                         const preXs = xs.filter((x) => !nx.some((n) => Math.abs(x - n) < 0.02));
 
@@ -740,8 +748,13 @@
                         lipids(ctx, px, preXs, pre[1], -1);
                         lipids(ctx, px, postXs, post[0], 1, (x) => -liftAt(x));
                         lipids(ctx, px, postXs, post[1], -1, (x) => -liftAt(x));
+                        for (const x of mp) {
+                            ctx.beginPath();
+                            ctx.ellipse(x, (post[0] + post[1]) / 2 - liftAt(x), 0.012, 0.058, 0, 0, TAU);
+                            solid(ctx, 0.12 + 0.15 * gather, 0.85, 1.2 * px);
+                        }
 
-                        // aGPCR: its N-terminal domain reaches up for C1QL, then the membrane follows.
+                        // aGPCR: its N-terminal domain reaches up for C1QL.
                         ctx.save();
                         ctx.translate(-dL, 0);
                         const la = lift(0.3);
