@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sarthak</title>
     <meta name="description" content="Sarthak Mohanty works on the structure and function of C1QL proteins, which help neurons form and maintain synapses." />
-    <meta name="theme-color" content="#fb6b0c" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#2a2a2a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f15a22" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c2340" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://sarthakmohanty.me/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sarthakmohanty.me/" />
@@ -30,7 +30,7 @@
 
         body {
             font-family: "Inter", sans-serif;
-            background-color: #fb6b0c;
+            background-color: #f15a22;
             color: white;
             line-height: 1.4;
             font-weight: 300;
@@ -39,7 +39,7 @@
 
         @media (prefers-color-scheme: dark) {
             body {
-                background-color: #2a2a2a;
+                background-color: #0c2340;
             }
         }
 
@@ -460,6 +460,26 @@
     </div>
 
     <script>
+        {
+            const body = "font-family: 'Inter', sans-serif; font-size: 12px; line-height: 1.6;";
+            const swatch = (bg) => `${body} color: white; background: ${bg}; padding: 1px 5px; border-radius: 3px;`;
+            console.log(
+                "%ccolophon%c\n%cthanks for looking under the hood.%c\n\n" +
+                "Written by hand in a single HTML file, with no framework or build step.\n" +
+                "The figures are drawn frame by frame in plain JavaScript on a <canvas>, and the captions highlight in sync with the animation.\n" +
+                "Set in Inter and Instrument Serif, on UTSA orange %c#f15a22%c by day and UTSA blue %c#0c2340%c at night, a nod to where I studied.\n\n" +
+                "View source to read all of it.",
+                "font-family: 'Instrument Serif', serif; font-style: italic; font-size: 20px; color: white; background: #f15a22; padding: 6px 12px;",
+                body,
+                "font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px;",
+                body,
+                swatch("#f15a22"),
+                body,
+                swatch("#0c2340"),
+                body
+            );
+        }
+
         (() => {
             const TAU = Math.PI * 2;
             const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
