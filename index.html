@@ -157,6 +157,34 @@
             margin-top: 1.2em;
         }
 
+        figure {
+            margin: 0;
+        }
+
+        figcaption {
+            margin-top: 0.8em;
+            font-size: 12.5px;
+            line-height: 1.55;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .fig-label {
+            font-family: "Instrument Serif", serif;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-right: 0.2em;
+        }
+
+        figcaption .cue {
+            transition: color 0.4s ease, text-decoration-color 0.4s ease, text-shadow 0.4s ease;
+        }
+
+        figcaption .cue.on {
+            color: white;
+        }
+
         .cue {
             text-decoration: underline;
             text-decoration-color: transparent;
@@ -286,12 +314,18 @@
                 <div class="section-label">about</div>
                 <div class="bio">
                     <div class="project">
-                        <p>Currently, I work on the structure and function of <span class="cue" data-cue="c1ql-ligand">complement component 1q-like (C1QL) proteins</span>, which help neurons in the brain <span class="cue" data-cue="c1ql-synapse">form and maintain the chemical junctions between them</span> by <span class="cue" data-cue="c1ql-receptor">binding to a receptor called an adhesion G protein-coupled receptor (aGPCR)</span>. Some C1QL proteins also <span class="cue" data-cue="c1ql-iglur">recruit ionotropic glutamate receptors (iGluRs) to these junctions</span>, <span class="cue" data-cue="c1ql-ions">channels that open in response to glutamate and let positively charged ions, including calcium, into the receiving neuron</span>. My work in the Ressl lab at UT Austin aims to understand how <span class="cue" data-cue="c1ql-complex">C1QL proteins assemble into the complexes that engage aGPCRs</span>, a receptor genetically linked to schizophrenia, bipolar disorder, and addiction. Because so many approved drugs act on G protein-coupled receptors, a structural picture of this interaction could point toward new treatments for psychiatric disorders that remain difficult to manage.</p>
-                        <canvas class="figure" data-anim="c1ql" aria-hidden="true"></canvas>
+                        <p>Currently, I work on the structure and function of complement component 1q-like (C1QL) proteins, which help neurons in the brain form and maintain the chemical junctions between them. My work in the Ressl lab at UT Austin aims to understand how C1QL proteins assemble into the complexes that engage their receptors, including an adhesion G protein-coupled receptor (aGPCR) genetically linked to schizophrenia, bipolar disorder, and addiction. Because so many approved drugs act on G protein-coupled receptors, a structural picture of this interaction could point toward new treatments for psychiatric disorders that remain difficult to manage.</p>
+                        <figure>
+                            <canvas class="figure" data-anim="c1ql" aria-hidden="true"></canvas>
+                            <figcaption><span class="fig-label">Figure 1</span> <span class="cue" data-cue="c1ql-ligand">Free-floating C1QLs are captured by a presynaptic membrane protein.</span> <span class="cue" data-cue="c1ql-receptor">One binds the extracellular domain of an aGPCR</span> <span class="cue" data-cue="c1ql-synapse">and pulls the postsynaptic membrane closer.</span> <span class="cue" data-cue="c1ql-iglur">Another binds an ionotropic glutamate receptor (iGluR) and clusters neighboring iGluRs around it;</span> <span class="cue" data-cue="c1ql-ions">these channels open on glutamate binding and admit cations, including Ca²⁺, into the postsynaptic neuron.</span></figcaption>
+                        </figure>
                     </div>
                     <div class="project">
-                        <p>I also collaborate with the Callmann group at UT Austin by using molecular dynamics simulations to determine how <span class="cue" data-cue="micelle-polymer">a glycopolymer we make</span> can help <span class="cue" data-cue="micelle-drug">poorly soluble medicines</span> <span class="cue" data-cue="micelle-deliver">reach patients</span>. Glucose-based copolymers are increasingly explored as drug carriers because they can <span class="cue" data-cue="micelle-wrap">wrap hydrophobic drugs into micelles</span> that keep them soluble in the body, so that <span class="cue" data-cue="micelle-target">more of each dose reaches its target</span>. That could allow lower doses and fewer toxic side effects.</p>
-                        <canvas class="figure" data-anim="micelle" aria-hidden="true"></canvas>
+                        <p>I also collaborate with the Callmann group at UT Austin by using molecular dynamics simulations to determine how a glycopolymer we make can help poorly soluble medicines reach patients. Sugar-based polymers like ours are increasingly explored as drug carriers that could allow lower doses with fewer toxic side effects.</p>
+                        <figure>
+                            <canvas class="figure" data-anim="micelle" aria-hidden="true"></canvas>
+                            <figcaption><span class="fig-label">Figure 2</span> <span class="cue" data-cue="micelle-drug">On their own, poorly soluble drug molecules aggregate in water and reach cells poorly.</span> <span class="cue" data-cue="micelle-wrap">Amphiphilic glycopolymer chains wrap the drugs into a micelle,</span> <span class="cue" data-cue="micelle-deliver">which the cell membrane takes up by endocytosis.</span> <span class="cue" data-cue="micelle-target">Inside the cell, the micelle releases its cargo and the drug binds its target protein.</span></figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -300,15 +334,21 @@
                 <div class="section-label">past</div>
                 <div class="bio">
                     <div class="project">
-                        <p>Most recently, I worked on the structural biology of <span class="cue" data-cue="plc-enzyme">phospholipase C epsilon (PLCε)</span>, a signaling protein <span class="cue" data-cue="plc-cancer">frequently dysregulated in cancers</span>. This work was part of a larger effort in the Falzone lab to understand the regulatory role of phospholipases in <span class="cue" data-cue="plc-signal">cellular signaling pathways</span> and how these mechanisms may eventually be targeted therapeutically.</p>
-                        <canvas class="figure" data-anim="plc" aria-hidden="true"></canvas>
+                        <p>Most recently, I worked on the structural biology of phospholipase C epsilon (PLCε), a signaling protein frequently dysregulated in cancers. This work was part of a larger effort in the Falzone lab to understand the regulatory role of phospholipases in cellular signaling pathways and how these mechanisms may eventually be targeted therapeutically.</p>
+                        <figure>
+                            <canvas class="figure" data-anim="plc" aria-hidden="true"></canvas>
+                            <figcaption><span class="fig-label">Figure 3</span> Left, <span class="cue" data-cue="plc-recruit">ligand binding activates a GPCR, and the activated G protein relays a signal (through small GTPases, omitted here) that brings PLCε to the membrane,</span> <span class="cue" data-cue="plc-cleave">where it hydrolyzes PIP₂ into the second messengers IP₃ and DAG.</span> Right, the same pathway in a whole cell: <span class="cue" data-cue="plc-messengers">IP₃ releases Ca²⁺ from the endoplasmic reticulum and DAG recruits protein kinase C (PKC),</span> <span class="cue" data-cue="plc-divide">signals that converge on cell growth and division.</span> The full-length structure of PLCε is unknown, so it is drawn as a blob.</figcaption>
+                        </figure>
                     </div>
                     <div class="project">
                         <p>Before that, I was a software engineer at Hack Club Bank, where I was part of a small team of developers that helped build a financial platform for students and nonprofits to raise and manage finances transparently. Prior to that, I was a designer-developer at Hack Club, where I helped build tools and experiences for students to build projects and learn to code.</p>
                     </div>
                     <div class="project">
-                        <p>I attended the University of Texas at San Antonio, where I earned a BS in biochemistry and focused on biosynthetic organic chemistry and computational biophysics. I am grateful to have gotten my start in research in <span class="cue" data-cue="edu-dft">an organic chemistry group on campus</span>. I also learned <span class="cue" data-cue="edu-xray">small molecule X-ray crystallography</span> from Dr. Hadi Arman at that time. After those experiences, I continued my research career working with Dr. Maria Falzone and Dr. Rahul Mojidra on the structure and function of PLCε using <span class="cue" data-cue="edu-cryo">cryo-electron microscopy</span> and fluorescence spectroscopy. For my thesis, I worked on mathematical methods to improve <span class="cue" data-cue="edu-model">macromolecular structure modeling from cryo-EM density maps</span>. I was co-advised by Dr. Maria Falzone and Dr. Hadi Arman for this work.</p>
-                        <canvas class="figure panels" data-anim="edu" aria-hidden="true"></canvas>
+                        <p>I attended the University of Texas at San Antonio, where I earned a BS in biochemistry and focused on biosynthetic organic chemistry and computational biophysics. I am grateful to have gotten my start in research in an organic chemistry group on campus. I also learned small molecule X-ray crystallography from Dr. Hadi Arman at that time. After those experiences, I continued my research career working with Dr. Maria Falzone and Dr. Rahul Mojidra on the structure and function of PLCε using cryo-electron microscopy and fluorescence spectroscopy. For my thesis, I worked on mathematical methods to improve macromolecular structure modeling from cryo-EM density maps. I was co-advised by Dr. Maria Falzone and Dr. Hadi Arman for this work.</p>
+                        <figure>
+                            <canvas class="figure panels" data-anim="edu" aria-hidden="true"></canvas>
+                            <figcaption><span class="fig-label">Figure 4</span> <span class="cue" data-cue="edu-dft">Left, density functional theory (DFT) on an aromatic ketone: the electron density converges over self-consistent field iterations, then the HOMO and LUMO appear as an electron is promoted between them.</span> <span class="cue" data-cue="edu-xray">Middle, small-molecule X-ray crystallography: a rotating crystal diffracts X-rays onto a detector, and the solved structure is drawn as thermal ellipsoids.</span> <span class="cue" data-cue="edu-cryo">Right, single-particle cryo-EM: particles picked from a micrograph are aligned and averaged into 2D classes, which are oriented in 3D to reconstruct a consensus map;</span> <span class="cue" data-cue="edu-model">a model is then built into the map, with open circles marking low-confidence residues.</span></figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -557,7 +597,6 @@
                     cues: [
                         [0.2, 2.1, "c1ql-ligand"],
                         [2.1, 3.2, "c1ql-receptor"],
-                        [2.1, 3.2, "c1ql-complex"],
                         [3.2, 4.6, "c1ql-synapse"],
                         [4.6, 6.5, "c1ql-iglur"],
                         [6.5, 9.4, "c1ql-ions"],
@@ -605,6 +644,7 @@
                         ctx.lineWidth = 1.5 * px;
                         ctx.strokeStyle = ink(0.75 + 0.25 * b1);
                         ctx.beginPath();
+                        ctx.moveTo(x0, topAt(x0));
                         for (let i = 0; i < 7; i++) {
                             const x = x0 + i * step, down = i % 2 === 0, y = down ? botAt(x) : topAt(x);
                             ctx.lineTo(x, y);
@@ -791,9 +831,8 @@
                     still: 8.4,
                     period: P,
                     cues: [
-                        [0.2, 3.0, "micelle-drug"],
-                        [3.0, 4.6, "micelle-polymer"],
-                        [4.6, 6.8, "micelle-wrap"],
+                        [0.2, 2.6, "micelle-drug"],
+                        [2.6, 6.8, "micelle-wrap"],
                         [6.8, 11.0, "micelle-deliver"],
                         [11.0, 13.6, "micelle-target"],
                     ],
@@ -1216,9 +1255,10 @@
                     still: 6,
                     period: P,
                     cues: [
-                        [0, 2.0, "plc-signal"],
-                        [2.0, 7.0, "plc-enzyme"],
-                        [7.0, 11.6, "plc-cancer"],
+                        [0, 2.0, "plc-recruit"],
+                        [2.0, 4.2, "plc-cleave"],
+                        [4.2, 7.0, "plc-messengers"],
+                        [7.0, 11.6, "plc-divide"],
                     ],
                     draw(ctx, t, dt, px, W) {
                         const τ = cycle(t), half = W / 2;
