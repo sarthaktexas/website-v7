@@ -146,6 +146,30 @@
             flex: 1;
         }
 
+        .project + .project {
+            margin-top: 1.6em;
+        }
+
+        .figure {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 1;
+            margin-top: 1.2em;
+        }
+
+        .cue {
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.4s ease, text-shadow 0.4s ease;
+        }
+
+        .cue.on {
+            text-decoration-color: currentColor;
+            text-shadow: 0 0 0.6px currentColor, 0 0 0.6px currentColor;
+        }
+
         .research-in-progress {
             position: relative;
             cursor: help;
@@ -224,6 +248,10 @@
             .bio {
                 font-size: 14px;
             }
+
+            .figure {
+                aspect-ratio: 2 / 1;
+            }
         }
 
         span.unavailable {
@@ -253,11 +281,31 @@
             <div class="section">
                 <div class="section-label">about</div>
                 <div class="bio">
-                    Most recently, I worked on the structural biology of phospholipase C epsilon (PLCε), a signaling protein frequently dysregulated in cancers. This work was part of a larger effort in the Falzone lab to understand the regulatory role of phospholipases in cellular signaling pathways and how these mechanisms may eventually be targeted therapeutically.
-                    <br /><br />
-                    Before that, I was a software engineer at Hack Club Bank, where I was part of a small team of developers that helped build a financial platform for students and nonprofits to raise and manage finances transparently. Prior to that, I was a designer-developer at Hack Club, where I helped build tools and experiences for students to build projects and learn to code.
-                    <br /><br />
-                    I attended the University of Texas at San Antonio, where I earned a BS in biochemistry and focused on biosynthetic organic chemistry and computational biophysics. I am grateful to have gotten my start in research in an organic chemistry group on campus. I also learned small molecule X-ray crystallography from Dr. Hadi Arman at that time. After those experiences, I continued my research career working with Dr. Maria Falzone and Dr. Rahul Mojidra on the structure and function of PLCε using cryo-electron microscopy and fluorescence spectroscopy. For my thesis, I worked on mathematical methods to improve macromolecular structure modeling from cryo-EM density maps. I was co-advised by Dr. Maria Falzone and Dr. Hadi Arman for this work.
+                    <div class="project">
+                        <p>Currently, I work on the structure and function of <span class="cue" data-cue="c1ql-ligand">complement component 1q-like (C1QL) proteins</span>, which help neurons in the brain <span class="cue" data-cue="c1ql-synapse">form and maintain the chemical junctions between them</span> by <span class="cue" data-cue="c1ql-receptor">binding to a receptor called an adhesion G protein-coupled receptor (aGPCR)</span>. Some C1QL proteins also <span class="cue" data-cue="c1ql-iglur">recruit ionotropic glutamate receptors (iGluRs) to these junctions</span>, <span class="cue" data-cue="c1ql-ions">channels that open in response to glutamate and let positively charged ions, including calcium, into the receiving neuron</span>. My work in the Ressl lab at UT Austin aims to understand how <span class="cue" data-cue="c1ql-complex">C1QL proteins assemble into the complexes that engage aGPCRs</span>, a receptor genetically linked to schizophrenia, bipolar disorder, and addiction. Because so many approved drugs act on G protein-coupled receptors, a structural picture of this interaction could point toward new treatments for psychiatric disorders that remain difficult to manage.</p>
+                        <canvas class="figure" data-anim="c1ql" aria-hidden="true"></canvas>
+                    </div>
+                    <div class="project">
+                        <p>I also collaborate with the Callmann group at UT Austin by using molecular dynamics simulations to determine how <span class="cue" data-cue="micelle-polymer">a glycopolymer we make</span> can help <span class="cue" data-cue="micelle-drug">poorly soluble medicines</span> <span class="cue" data-cue="micelle-deliver">reach patients</span>. Glucose-based copolymers are increasingly explored as drug carriers because they can <span class="cue" data-cue="micelle-wrap">wrap hydrophobic drugs into micelles</span> that keep them soluble in the body, so that <span class="cue" data-cue="micelle-target">more of each dose reaches its target</span>. That could allow lower doses and fewer toxic side effects.</p>
+                        <canvas class="figure" data-anim="micelle" aria-hidden="true"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-label">past</div>
+                <div class="bio">
+                    <div class="project">
+                        <p>Most recently, I worked on the structural biology of <span class="cue" data-cue="plc-enzyme">phospholipase C epsilon (PLCε)</span>, a signaling protein <span class="cue" data-cue="plc-cancer">frequently dysregulated in cancers</span>. This work was part of a larger effort in the Falzone lab to understand the regulatory role of phospholipases in <span class="cue" data-cue="plc-signal">cellular signaling pathways</span> and how these mechanisms may eventually be targeted therapeutically.</p>
+                        <canvas class="figure" data-anim="plc" aria-hidden="true"></canvas>
+                    </div>
+                    <div class="project">
+                        <p>Before that, I was a software engineer at Hack Club Bank, where I was part of a small team of developers that helped build a financial platform for students and nonprofits to raise and manage finances transparently. Prior to that, I was a designer-developer at Hack Club, where I helped build tools and experiences for students to build projects and learn to code.</p>
+                    </div>
+                    <div class="project">
+                        <p>I attended the University of Texas at San Antonio, where I earned a BS in biochemistry and focused on biosynthetic organic chemistry and computational biophysics. I am grateful to have gotten my start in research in <span class="cue" data-cue="edu-dft">an organic chemistry group on campus</span>. I also learned <span class="cue" data-cue="edu-xray">small molecule X-ray crystallography</span> from Dr. Hadi Arman at that time. After those experiences, I continued my research career working with Dr. Maria Falzone and Dr. Rahul Mojidra on the structure and function of PLCε using <span class="cue" data-cue="edu-cryo">cryo-electron microscopy</span> and fluorescence spectroscopy. For my thesis, I worked on mathematical methods to improve <span class="cue" data-cue="edu-model">macromolecular structure modeling from cryo-EM density maps</span>. I was co-advised by Dr. Maria Falzone and Dr. Hadi Arman for this work.</p>
+                        <canvas class="figure" data-anim="edu" aria-hidden="true"></canvas>
+                    </div>
                 </div>
             </div>
 
@@ -356,6 +404,1425 @@
             </div>
         </div>
     </div>
+
+    <script>
+        (() => {
+            const TAU = Math.PI * 2;
+            const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+            const lerp = (a, b, t) => a + (b - a) * t;
+            const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+            const phase = (t, a, b) => clamp((t - a) / (b - a));
+            const ink = (a) => `rgba(255, 255, 255, ${clamp(a)})`;
+            const hash = (n) => {
+                const s = Math.sin(n * 127.1 + 311.7) * 43758.5453;
+                return s - Math.floor(s);
+            };
+
+            function disc(ctx, x, y, r) {
+                ctx.beginPath();
+                ctx.arc(x, y, r, 0, TAU);
+            }
+
+            // Erases whatever is under the current path so overlapping shapes read as solid objects.
+            function solid(ctx, fillA, strokeA, lw) {
+                ctx.globalCompositeOperation = "destination-out";
+                ctx.fillStyle = "#000";
+                ctx.fill();
+                ctx.globalCompositeOperation = "source-over";
+                if (fillA > 0) {
+                    ctx.fillStyle = ink(fillA);
+                    ctx.fill();
+                }
+                if (strokeA > 0) {
+                    ctx.lineWidth = lw;
+                    ctx.strokeStyle = ink(strokeA);
+                    ctx.stroke();
+                }
+            }
+
+            function hexagon(ctx, x, y, r, rot) {
+                ctx.beginPath();
+                for (let i = 0; i < 6; i++) {
+                    const a = rot + (i * TAU) / 6;
+                    ctx.lineTo(x + r * Math.cos(a), y + r * Math.sin(a));
+                }
+                ctx.closePath();
+            }
+
+            function lipids(ctx, px, xs, y, dir, dy = () => 0) {
+                ctx.lineWidth = px;
+                ctx.strokeStyle = ink(0.35);
+                ctx.beginPath();
+                for (const x of xs) {
+                    const yy = y + dy(x);
+                    ctx.moveTo(x - 0.005, yy + dir * 0.01);
+                    ctx.lineTo(x - 0.005, yy + dir * 0.045);
+                    ctx.moveTo(x + 0.005, yy + dir * 0.01);
+                    ctx.lineTo(x + 0.005, yy + dir * 0.045);
+                }
+                ctx.stroke();
+                ctx.fillStyle = ink(0.55);
+                for (const x of xs) {
+                    disc(ctx, x, y + dy(x), 0.009);
+                    ctx.fill();
+                }
+            }
+
+            // Irregular globular protein outline; `notch`, an angle, carves a binding pocket on that side.
+            function protein(ctx, x, y, r, t, seed, notch) {
+                ctx.beginPath();
+                for (let i = 0; i < 64; i++) {
+                    const a = (i * TAU) / 64;
+                    let rr = r * (1 + 0.08 * Math.sin(3 * a + seed + 0.4 * Math.sin(t * 0.7 + seed)) + 0.05 * Math.sin(5 * a + 2 * seed) + 0.03 * Math.sin(2 * a - t * 0.5));
+                    if (notch !== undefined) rr -= 0.4 * r * Math.exp(-((Math.atan2(Math.sin(a - notch), Math.cos(a - notch)) / 0.35) ** 2));
+                    ctx.lineTo(x + rr * Math.cos(a), y + rr * Math.sin(a));
+                }
+                ctx.closePath();
+            }
+
+            function polyline(ctx, pts) {
+                ctx.beginPath();
+                pts.forEach(([x, y]) => ctx.lineTo(x, y));
+            }
+
+            // Free-floating C1QLs captured by a presynaptic peripheral membrane protein: C1QL1 grabs an aGPCR and pulls the
+            // postsynaptic membrane closer, C1QL2 binds an iGluR and draws neighbouring iGluRs into a cluster around it.
+            function c1ql() {
+                const P = 12, pre = [0.05, 0.15], post = [0.6, 0.7], L = 0.06;
+                const docks = [0.3, 0.72], dockY = 0.275, x0 = 0.21, step = 0.03;
+
+                // Pivot at the middle of the molecule: stalk tip at (0, -0.07), globular heads around (0, 0.04).
+                function ligand(ctx, px, x, y, ang, t, bound) {
+                    ctx.save();
+                    ctx.translate(x, y);
+                    ctx.rotate(ang);
+                    ctx.lineWidth = 1.3 * px;
+                    ctx.strokeStyle = ink(0.85);
+                    polyline(ctx, [[0, -0.07], [-0.004, -0.04], [0, 0.04]]);
+                    ctx.stroke();
+                    ctx.save();
+                    ctx.translate(-0.004, -0.042);
+                    ctx.rotate(-0.45);
+                    ctx.beginPath();
+                    ctx.rect(-0.026, -0.01, 0.052, 0.02);
+                    solid(ctx, 0.12, 0.9, 1.2 * px);
+                    ctx.restore();
+                    const heads = [0, 1, 2].map((k) => {
+                        const a = t * 1.1 + (k * TAU) / 3;
+                        return { x: 0.028 * Math.cos(a), y: 0.04 + 0.0154 * Math.sin(a), z: Math.sin(a) };
+                    }).sort((a, b) => a.z - b.z);
+                    for (const h of heads) {
+                        disc(ctx, h.x, h.y, 0.026);
+                        solid(ctx, 0.18 + 0.12 * h.z + 0.25 * bound, 0.95, 1.3 * px);
+                    }
+                    ctx.restore();
+                }
+
+                // Side view of a tetrameric iGluR: amino-terminal and ligand-binding domains over a crossed-helix pore.
+                function iglur(ctx, px, x, lift, open, glow) {
+                    const p0 = post[0] - lift, top = p0 - 0.015, bot = post[1] - lift + 0.015, w = 0.006 * open;
+                    ctx.lineWidth = 1.2 * px;
+                    ctx.strokeStyle = ink(0.8);
+                    ctx.beginPath();
+                    for (const s of [-1, 1]) {
+                        const a = x + s * (0.012 + w), b = x + s * (0.034 + w), c = x + s * (0.023 + w);
+                        ctx.moveTo(x + s * 0.019, p0 - 0.222);
+                        ctx.lineTo(x + s * 0.024, p0 - 0.12);
+                        ctx.lineTo(c, top);
+                        ctx.moveTo(a, top);
+                        ctx.lineTo(b, bot);
+                        ctx.moveTo(b, top);
+                        ctx.lineTo(a, bot);
+                        ctx.moveTo(c, bot);
+                        for (let k = 1; k <= 3; k++) ctx.lineTo(c + (k % 2 ? 0.008 : -0.008), bot + k * 0.016);
+                    }
+                    ctx.stroke();
+                    for (const s of [-1, 1]) {
+                        disc(ctx, x + s * 0.024, p0 - 0.12, 0.017);
+                        solid(ctx, 0.12, 0.85, 1.2 * px);
+                    }
+                    for (const s of [-1, 1]) {
+                        disc(ctx, x + s * 0.019, p0 - 0.222, 0.018);
+                        solid(ctx, 0.12 + 0.4 * glow, 0.85 + 0.15 * glow, 1.2 * px);
+                    }
+                }
+
+                return {
+                    still: 7.5,
+                    period: P,
+                    cues: [
+                        [0.2, 2.1, "c1ql-ligand"],
+                        [2.1, 3.2, "c1ql-receptor"],
+                        [2.1, 3.2, "c1ql-complex"],
+                        [3.2, 4.6, "c1ql-synapse"],
+                        [4.6, 6.5, "c1ql-iglur"],
+                        [6.5, 9.4, "c1ql-ions"],
+                    ],
+                    draw(ctx, t, dt, px, W) {
+                        const τ = t % P;
+                        const off = (W - 1) / 2, dL = Math.min(0.35, off / 2);
+                        const out = (a, b) => 1 - ease(phase(τ, a, b));
+                        const d = [ease(phase(τ, 0.5, 2.0)) * out(10.6, 11.9), ease(phase(τ, 2.4, 4.0)) * out(10.6, 11.9)];
+                        const grab = ease(phase(τ, 2.1, 2.9)) * out(10.2, 10.7);
+                        const pull = ease(phase(τ, 3.2, 4.6)) * out(9.4, 10.4);
+                        const b1 = phase(τ, 2.8, 3.1) * (1 - phase(τ, 10.1, 10.4));
+                        const b2 = phase(τ, 3.9, 4.2) * (1 - phase(τ, 10.1, 10.4));
+                        const split = ease(phase(τ, 3.6, 5.0)) * out(9.6, 11);
+                        const cluster = ease(phase(τ, 4.6, 6.6)) * out(9.4, 10.8);
+                        const open = phase(τ, 6.4, 6.8) * (1 - phase(τ, 9.0, 9.4));
+                        const liftAt = (x) => L * pull * Math.exp(-(((x - 0.3 + dL) / 0.26) ** 2));
+                        const lift = (x) => liftAt(x - dL), liftR = (x) => liftAt(x + dL);
+                        const gx = [
+                            lerp(0.5 + 0.012 * Math.sin(t * 0.8), 0.615, cluster),
+                            0.72 + 0.006 * Math.sin(t * 0.7 + 1) * (1 - d[1]),
+                            lerp(0.95 + 0.012 * Math.sin(t * 0.9 + 2), 0.825, cluster),
+                        ];
+                        ctx.translate(off, 0.07);
+                        const xs = [];
+                        for (let x = 0.025 - Math.ceil(off / 0.04) * 0.04; x < W - off; x += 0.04) xs.push(x);
+                        const busy = [[0.19 - dL, 0.41 - dL], ...gx.map((x) => [x + dL - 0.045, x + dL + 0.045])];
+                        const postXs = xs.filter((x) => !busy.some(([a, b]) => x > a && x < b));
+
+                        lipids(ctx, px, xs, pre[0], 1);
+                        lipids(ctx, px, xs, pre[1], -1);
+                        lipids(ctx, px, postXs, post[0], 1, (x) => -liftAt(x));
+                        lipids(ctx, px, postXs, post[1], -1, (x) => -liftAt(x));
+
+                        // aGPCR: its N-terminal CUB domain reaches up for C1QL1, then the membrane follows.
+                        ctx.save();
+                        ctx.translate(-dL, 0);
+                        const la = lift(0.3);
+                        const topAt = (x) => post[0] - lift(x) - 0.015, botAt = (x) => post[1] - lift(x) + 0.015;
+                        const gain = [0.255, post[0] - 0.09 - la], cub = [0.3, lerp(post[0] - 0.16 - la, 0.38, grab)];
+                        ctx.lineWidth = 1.2 * px;
+                        ctx.strokeStyle = ink(0.8);
+                        polyline(ctx, [cub, gain, [x0, topAt(x0)]]);
+                        ctx.stroke();
+                        ctx.lineWidth = 1.5 * px;
+                        ctx.strokeStyle = ink(0.75 + 0.25 * b1);
+                        ctx.beginPath();
+                        for (let i = 0; i < 7; i++) {
+                            const x = x0 + i * step, down = i % 2 === 0, y = down ? botAt(x) : topAt(x);
+                            ctx.lineTo(x, y);
+                            if (i < 6) {
+                                const y1 = down ? botAt(x + step) : topAt(x + step);
+                                ctx.quadraticCurveTo(x + step / 2, (y + y1) / 2 + (down ? step : -step), x + step, y1);
+                            }
+                        }
+                        ctx.lineTo(x0 + 6 * step + 0.015, botAt(x0 + 6 * step) + 0.025);
+                        ctx.stroke();
+                        disc(ctx, ...gain, 0.028);
+                        solid(ctx, 0.12, 0.85, 1.2 * px);
+                        disc(ctx, ...cub, 0.03);
+                        solid(ctx, 0.12 + 0.5 * b1, 0.85 + 0.15 * b1, 1.2 * px);
+
+                        // G protein splitting off once the aGPCR is engaged.
+                        const gy = post[1] - la;
+                        disc(ctx, 0.3 - 0.12 * split, gy + 0.075 + 0.02 * split, 0.026);
+                        solid(ctx, 0.15, 0.85, 1.2 * px);
+                        disc(ctx, 0.352 + 0.1 * split, gy + 0.085 + 0.015 * split, 0.019);
+                        solid(ctx, 0.15, 0.85, 1.2 * px);
+                        disc(ctx, 0.378 + 0.1 * split, gy + 0.068 + 0.015 * split, 0.01);
+                        solid(ctx, 0.15, 0.85, 1.2 * px);
+
+                        ctx.restore();
+
+                        ctx.save();
+                        ctx.translate(dL, 0);
+                        gx.forEach((x, j) => iglur(ctx, px, x, liftR(x), open, j === 1 ? b2 : 0.35 * cluster));
+
+                        // Ions moving through the clustered, open channels.
+                        ctx.fillStyle = ink(0.9);
+                        gx.forEach((x, j) => {
+                            for (let k = 0; k < 10; k++) {
+                                const start = 6.5 + k * 0.3 + j * 0.13, s = (τ - start) / 0.9;
+                                if (s <= 0 || s >= 1 || start > 9.0) continue;
+                                disc(ctx, x + 0.003 * Math.sin(k * 2.1 + s * 6), lerp(post[0] - liftR(x) - 0.06, 0.98, s), 0.005);
+                                ctx.globalAlpha = Math.min(1, s * 5, (1 - s) * 5);
+                                ctx.fill();
+                                ctx.globalAlpha = 1;
+                            }
+                        });
+                        ctx.restore();
+
+                        // Peripheral membrane proteins on the presynaptic side that capture C1QL.
+                        const dk = [docks[0] - dL, docks[1] + dL];
+                        dk.forEach((x, j) => {
+                            ctx.beginPath();
+                            ctx.ellipse(x, 0.183, 0.036, 0.022, 0, 0, TAU);
+                            solid(ctx, 0.12 + 0.3 * d[j], 0.85, 1.2 * px);
+                        });
+
+                        const floats = [
+                            [0.13 - dL + 0.03 * Math.sin(t * 0.7), 0.28 + 0.025 * Math.sin(t * 0.9 + 1), 0.9 * Math.sin(t * 0.6)],
+                            [0.88 + dL + 0.025 * Math.sin(t * 0.8 + 2), 0.28 + 0.025 * Math.sin(t * 0.7), 0.9 * Math.sin(t * 0.55 + 1)],
+                            [0.5 + 0.03 * Math.sin(t * 0.5 + 4), 0.245 + 0.015 * Math.sin(t * 0.75 + 3), 1.1 * Math.sin(t * 0.45 + 2)],
+                        ];
+                        [0, 1].forEach((j) => {
+                            const [fx, fy, fa] = floats[j];
+                            const x = lerp(fx, dk[j], d[j]), y = lerp(fy, dockY, d[j]), a = fa * (1 - d[j]);
+                            const tug = τ < 6 ? Math.sin(Math.PI * d[j]) : 0;
+                            if (tug > 0.02) {
+                                ctx.setLineDash([0.008, 0.008]);
+                                ctx.lineWidth = px;
+                                ctx.strokeStyle = ink(0.6 * tug);
+                                polyline(ctx, [[dk[j], 0.205], [x + 0.07 * Math.sin(a), y - 0.07 * Math.cos(a)]]);
+                                ctx.stroke();
+                                ctx.setLineDash([]);
+                            }
+                            ligand(ctx, px, x, y, a, t + j, j ? b2 : b1);
+                        });
+                        ligand(ctx, px, ...floats[2], t + 2, 0);
+
+                        ctx.lineWidth = 1.5 * px;
+                        for (const [x, y, at] of [[dk[0], 0.36, 2.9], [dk[1], 0.36, 4.0]]) {
+                            const s = τ - at;
+                            if (s <= 0 || s >= 1) continue;
+                            disc(ctx, x, y, 0.02 + 0.1 * ease(s));
+                            ctx.strokeStyle = ink(0.7 * (1 - s));
+                            ctx.stroke();
+                        }
+                    },
+                };
+            }
+
+            // Drugs gather, glycopolymer chains wrap them into a micelle, and the membrane engulfs it into the cell.
+            function micelle() {
+                const P = 16, n = 9, Z = 1.4, Rc = 0.04, Rm = 0.145, h = 0.037, w = 0.21, depth = 0.37;
+                const rv = Rm + 0.012 + h;
+                const core = [[-0.018, -0.014], [0.02, -0.012], [-0.01, 0.02], [0.022, 0.018]];
+                // Starting and final drug positions as fractions across the outside and inside of the cell.
+                const free = [[0.3, 0.27], [0.8, 0.68], [0.25, 0.8], [0.45, 0.12]];
+                const inside = [null, [0.05, 0.2], [0.3, 0.85], [0.55, 0.15]];
+                const turn = (a, b) => ((((b - a + Math.PI) % TAU) + TAU) % TAU) - Math.PI;
+
+                function drug(ctx, px, x, y, rot) {
+                    ctx.save();
+                    ctx.translate(x, y);
+                    ctx.rotate(rot);
+                    for (const side of [-1, 1]) {
+                        hexagon(ctx, side * 0.012, 0, 0.014, Math.PI / 6);
+                        solid(ctx, 0.35, 0.95, 1.1 * px);
+                    }
+                    ctx.restore();
+                }
+
+                // Hydrophobic zigzag block, then a hydrophilic block carrying sugars.
+                function chain(ctx, px, t, i) {
+                    const core = [];
+                    for (let j = 0; j <= 4; j++) core.push([j * 0.01, j % 2 ? 0.007 : -0.007]);
+                    polyline(ctx, core);
+                    ctx.lineWidth = 1.6 * px;
+                    ctx.strokeStyle = ink(0.95);
+                    ctx.stroke();
+
+                    const shell = [];
+                    for (let j = 0; j <= 12; j++) {
+                        const x = 0.045 + j * 0.005;
+                        shell.push([x, 0.006 * Math.sin(x * 70 - t * 2 + i)]);
+                    }
+                    polyline(ctx, shell);
+                    ctx.lineWidth = 1.1 * px;
+                    ctx.strokeStyle = ink(0.8);
+                    ctx.stroke();
+
+                    for (const [j, side] of [[4, -1], [10, 1]]) {
+                        const [x, y] = shell[j];
+                        ctx.beginPath();
+                        ctx.moveTo(x, y);
+                        ctx.lineTo(x, y + side * 0.014);
+                        ctx.lineWidth = px;
+                        ctx.strokeStyle = ink(0.8);
+                        ctx.stroke();
+                        hexagon(ctx, x, y + side * 0.022, 0.008, Math.PI / 2);
+                        solid(ctx, 0, 0.85, px);
+                    }
+                }
+
+                function ring(ctx, px, x, y, s) {
+                    if (s <= 0 || s >= 1) return;
+                    disc(ctx, x, y, 0.01 + 0.04 * ease(s));
+                    ctx.lineWidth = px;
+                    ctx.strokeStyle = ink(0.7 * (1 - s));
+                    ctx.stroke();
+                }
+
+                // Lipids spaced evenly along a midline, heads on both sides and tails pointing in.
+                function bilayer(ctx, px, line, closed) {
+                    const pts = [];
+                    let acc = 0, next = 0.013;
+                    const segs = closed ? line.length : line.length - 1;
+                    for (let i = 0; i < segs; i++) {
+                        const [ax, ay] = line[i], [bx, by] = line[(i + 1) % line.length];
+                        const len = Math.hypot(bx - ax, by - ay);
+                        for (; next <= acc + len; next += 0.026) {
+                            const u = (next - acc) / len;
+                            pts.push([lerp(ax, bx, u), lerp(ay, by, u), (bx - ax) / len, (by - ay) / len]);
+                        }
+                        acc += len;
+                    }
+                    ctx.lineWidth = px;
+                    ctx.strokeStyle = ink(0.35);
+                    ctx.beginPath();
+                    for (const [x, y, tx, ty] of pts) {
+                        for (const s of [-1, 1]) {
+                            for (const o of [-0.004, 0.004]) {
+                                const hx = x - s * ty * h + o * tx, hy = y + s * tx * h + o * ty;
+                                ctx.moveTo(hx + s * ty * 0.009, hy - s * tx * 0.009);
+                                ctx.lineTo(hx + s * ty * 0.031, hy - s * tx * 0.031);
+                            }
+                        }
+                    }
+                    ctx.stroke();
+                    ctx.fillStyle = ink(0.55);
+                    for (const [x, y, tx, ty] of pts) {
+                        for (const s of [-1, 1]) {
+                            disc(ctx, x - s * ty * h, y + s * tx * h, 0.0075);
+                            ctx.fill();
+                        }
+                    }
+                }
+
+                return {
+                    still: 8.4,
+                    period: P,
+                    cues: [
+                        [0.2, 3.0, "micelle-drug"],
+                        [3.0, 4.6, "micelle-polymer"],
+                        [4.6, 6.8, "micelle-wrap"],
+                        [6.8, 11.0, "micelle-deliver"],
+                        [11.0, 13.6, "micelle-target"],
+                    ],
+                    draw(ctx, t, dt, px, W) {
+                        const τ = t % P;
+                        const φ = t * 0.25;
+                        ctx.scale(Z, Z);
+                        px /= Z;
+                        W /= Z;
+                        const H = 1 / Z, yc = H / 2;
+                        const X0 = W * 0.45, dockX = X0 - h - Rm - 0.005, hit = [X0 - h - 0.02, 0.27 * H];
+                        const sink = depth * ease(phase(τ, 6.8, 9.4));
+                        const D = τ < 9.4 ? sink : depth * (1 - ease(phase(τ, 9.4, 9.8)));
+                        const line = [];
+                        for (let y = -0.05; y <= H + 0.05; y += 0.004) line.push([X0 + D * Math.exp(-(((y - yc) / w) ** 4)), y]);
+                        bilayer(ctx, px, line, false);
+
+                        // Drug target inside the cell, with a pocket facing the incoming drug.
+                        const Rt = 0.08, tx = Math.min(W - 0.1, X0 + 0.95), ty = tx - X0 - 0.5 < 0.35 ? 0.1 : yc;
+                        const pocket = [tx - 0.6 * Rt - 0.013, ty];
+                        const bound = phase(τ, 12.6, 12.9) * (1 - phase(τ, 14.2, 15.0));
+                        protein(ctx, tx, ty, Rt, t, 2.2, Math.PI);
+                        solid(ctx, 0.12 + 0.5 * bound, 0.9, 1.2 * px);
+
+                        const scene = (τs, alpha) => {
+                            const engulfed = τs >= 9.4;
+                            const cx = engulfed
+                                ? lerp(dockX + depth, X0 + 0.5, ease(phase(τs, 9.4, 10.8)))
+                                : lerp(X0 - 0.3, dockX, ease(phase(τs, 6.0, 6.8))) + depth * ease(phase(τs, 6.8, 9.4));
+                            const cy = yc + 0.012 * Math.sin(t * 0.6) * (1 - phase(τs, 5.5, 6.8));
+                            ctx.globalAlpha = alpha;
+
+                            if (engulfed && τs < 12) {
+                                const circle = [];
+                                for (let i = 0; i < 96; i++) circle.push([cx + rv * Math.cos((i * TAU) / 96), cy + rv * Math.sin((i * TAU) / 96)]);
+                                ctx.globalAlpha = alpha * (1 - phase(τs, 11.0, 12.0));
+                                bilayer(ctx, px, circle, true);
+                                ctx.globalAlpha = alpha;
+                            }
+
+                            core.forEach(([ox, oy], k) => {
+                                const home = [cx + ox * Math.cos(φ) - oy * Math.sin(φ), cy + ox * Math.sin(φ) + oy * Math.cos(φ)];
+                                const fw = [free[k][0] * (X0 - 0.12) + 0.015 * Math.sin(t * 0.9 + k * 2), free[k][1] * H + 0.02 * Math.sin(t * 0.7 + k)];
+                                let x, y;
+                                if (k < 3) {
+                                    const p = ease(phase(τs, 0.4 + 0.3 * k, 2.6 + 0.1 * k));
+                                    [x, y] = [lerp(fw[0], home[0], p), lerp(fw[1], home[1], p)];
+                                } else if (τs < 1.6) {
+                                    const p = phase(τs, 0.3, 1.6) ** 2;
+                                    [x, y] = [lerp(fw[0], hit[0], p), lerp(fw[1], hit[1], p)];
+                                } else {
+                                    const p = 1 - (1 - phase(τs, 1.6, 3.0)) ** 2;
+                                    const ctrl = [hit[0] - 0.12, (hit[1] + home[1]) / 2 - 0.05];
+                                    x = (1 - p) ** 2 * hit[0] + 2 * (1 - p) * p * ctrl[0] + p * p * home[0];
+                                    y = (1 - p) ** 2 * hit[1] + 2 * (1 - p) * p * ctrl[1] + p * p * home[1];
+                                }
+                                const out = ease(phase(τs, 11 + 0.15 * k, 12.8 + 0.15 * k));
+                                let rot = k * 1.3 + 0.6 * Math.sin(t * 0.8 + k);
+                                if (out > 0) {
+                                    const to = k === 0 ? pocket : [X0 + 0.15 + inside[k][0] * (W - X0 - 0.25) + 0.012 * Math.sin(t * 0.9 + k), inside[k][1] * H + 0.015 * Math.cos(t * 0.8 + k * 2)];
+                                    [x, y] = [lerp(x, to[0], out), lerp(y, to[1], out)];
+                                    if (k === 0) rot = lerp(rot, Math.PI / 2, out);
+                                }
+                                drug(ctx, px, x, y, rot);
+                            });
+
+                            for (let i = 0; i < n; i++) {
+                                const θ = (i * TAU) / n + φ;
+                                const fc = [0.05 + (X0 - 0.25) * hash(i + 1) + 0.012 * Math.sin(t * 0.6 + i), (0.08 + 0.84 * hash(i + 20)) * H + 0.015 * Math.sin(t * 0.5 + 2 * i)];
+                                const fa = TAU * hash(i + 40) + 0.4 * Math.sin(t * 0.4 + i);
+                                const a = ease(phase(τs, 2.6 + 0.25 * i, 4.0 + 0.25 * i));
+                                const rel = ease(phase(τs, 11 + 0.05 * i, 12.4));
+                                if (rel >= 1) continue;
+                                const r = Rc + 0.1 * rel;
+                                const bx = lerp(fc[0], cx + r * Math.cos(θ), a), by = lerp(fc[1], cy + r * Math.sin(θ), a);
+                                ctx.save();
+                                ctx.globalAlpha = alpha * (1 - rel);
+                                ctx.translate(bx, by);
+                                ctx.rotate(fa + turn(fa, θ) * a + 0.35 * Math.sin(Math.PI * a) * Math.sin(t * 5 + i));
+                                chain(ctx, px, t, i);
+                                ctx.restore();
+                            }
+
+                            ring(ctx, px, hit[0] + 0.02, hit[1], (τs - 1.6) / 0.8);
+                            ring(ctx, px, X0, yc, (τs - 9.4) / 0.8);
+                            ring(ctx, px, ...pocket, (τs - 12.8) / 0.8);
+                            ctx.globalAlpha = 1;
+                        };
+
+                        scene(τ, 1 - phase(τ, 14.2, 15.0));
+                        if (τ > 15) scene(0, phase(τ, 15, 16));
+                    },
+                };
+            }
+
+            // Left: close-up of PLCε, recruited by Gα, cleaving PIP2 into IP3 and DAG. Right: the same pathway in a whole
+            // cell, from GPCR activation through calcium release and PKC to growth and division.
+            function plc() {
+                const P = 14, Z = 1.9, sp = 0.026, v = 0.05, yOut = 0.12, yIn = 0.194;
+                const R0 = 0.28, R1 = 0.33, n0 = 0.085, lag = 1.8;
+                // Three rounds of division (1 → 2 → 4 → 8), alternating axis: [offset, vertical, radius after].
+                const rounds = [
+                    [0.27, 0, R1 / Math.SQRT2],
+                    [0.17, 1, R1 / 2],
+                    [0.125, 0, R1 / (2 * Math.SQRT2)],
+                ];
+                const r3 = rounds[2][2], home = [0.5 - 0.27 - 0.125, 0.5 - 0.17], span = 2 * (0.27 + 0.125 + r3);
+                const aP = -2.1, aG = -1.45, sites = [aP - 0.32, aP, aP + 0.32];
+                const cycle = (t) => ((t % P) + P) % P;
+                const active = (t) => {
+                    const τ = cycle(t);
+                    return τ > 2.0 && τ < 10.4;
+                };
+
+                function inositol(ctx, x, y, rot, alpha, px) {
+                    hexagon(ctx, x, y, 0.01, rot);
+                    solid(ctx, 0.25 * alpha, alpha, 1.1 * px);
+                    ctx.fillStyle = ink(alpha);
+                    for (let k = 0; k < 3; k++) {
+                        const a = rot + Math.PI / 2 + (k - 1) * 1.1 + (k === 1 ? Math.PI : 0);
+                        disc(ctx, x + 0.018 * Math.cos(a), y + 0.018 * Math.sin(a), 0.0045);
+                        ctx.fill();
+                    }
+                }
+
+                function tails(ctx, x, y, dir, px) {
+                    ctx.lineWidth = px;
+                    ctx.strokeStyle = ink(0.35);
+                    ctx.beginPath();
+                    for (const o of [-0.004, 0.004]) {
+                        ctx.moveTo(x + o, y + dir * 0.009);
+                        ctx.lineTo(x + o, y + dir * 0.031);
+                    }
+                    ctx.stroke();
+                }
+
+                function closeup(ctx, px, t, τ, LW) {
+                    const ex = LW * 0.34, xa = ex - 0.02, r = 0.085, gc = LW - 0.1, step = 0.016, g0 = gc - 3 * step;
+                    const n0 = Math.floor((v * t - 0.06) / sp), n1 = Math.ceil((v * t + LW + 0.06) / sp);
+                    const released = [];
+
+                    for (let n = n0; n <= n1; n++) {
+                        const x = n * sp - v * t;
+                        tails(ctx, x, yOut, 1, px);
+                        disc(ctx, x, yOut, 0.0075);
+                        ctx.fillStyle = ink(0.55);
+                        ctx.fill();
+
+                        tails(ctx, x, yIn, -1, px);
+                        if (hash(n) < 0.25) {
+                            const tc = (n * sp - xa) / v;
+                            if (active(tc) && t >= tc) {
+                                disc(ctx, x, yIn - 0.004, 0.0035);
+                                ctx.fillStyle = ink(0.75);
+                                ctx.fill();
+                                released.push(t - tc);
+                            } else {
+                                inositol(ctx, x, yIn + 0.012, 0, 0.9, px);
+                            }
+                        } else {
+                            disc(ctx, x, yIn, 0.0075);
+                            ctx.fillStyle = ink(0.55);
+                            ctx.fill();
+                        }
+                    }
+
+                    // Heterotrimeric G protein under the GPCR; once activated, Gα slides off and holds PLCε at the membrane.
+                    const gtp = phase(τ, 0.6, 0.9) * (1 - phase(τ, 10.4, 10.8));
+                    const gd = ex + 0.115, rest = gc - 0.01;
+                    const gax = τ < 6 ? lerp(rest, gd, ease(phase(τ, 0.8, 1.8))) : lerp(gd, rest, ease(phase(τ, 11.0, 12.2)));
+                    ctx.lineWidth = 1.2 * px;
+                    ctx.strokeStyle = ink(0.8);
+                    polyline(ctx, [[gc + 0.06, yIn + 0.05], [gc + 0.055, yIn + 0.025], [gc + 0.065, yIn], [gc + 0.06, yIn - 0.025]]);
+                    ctx.stroke();
+                    disc(ctx, gc + 0.06, yIn + 0.06, 0.01);
+                    solid(ctx, 0.12, 0.85, 1.2 * px);
+                    disc(ctx, gc + 0.035, yIn + 0.09, 0.024);
+                    solid(ctx, 0.12, 0.85, 1.2 * px);
+                    ctx.lineWidth = 1.2 * px;
+                    ctx.strokeStyle = ink(0.8);
+                    polyline(ctx, [[gax, yIn + 0.045], [gax - 0.005, yIn + 0.02], [gax + 0.005, yIn], [gax, yIn - 0.025]]);
+                    ctx.stroke();
+                    disc(ctx, gax, yIn + 0.075, 0.03);
+                    solid(ctx, 0.1 + 0.7 * gtp, 0.9, 1.3 * px);
+
+                    // GPCR: seven transmembrane helices; the scrolling lipids pass behind it.
+                    const on = phase(τ, 0.6, 0.9) * (1 - phase(τ, 9.0, 9.4));
+                    const top = yOut - 0.012, bot = yIn + 0.012;
+                    ctx.beginPath();
+                    ctx.rect(g0 - 0.011, yOut - 0.011, 6 * step + 0.022, yIn - yOut + 0.022);
+                    ctx.globalCompositeOperation = "destination-out";
+                    ctx.fill();
+                    ctx.globalCompositeOperation = "source-over";
+                    ctx.lineWidth = 1.4 * px;
+                    ctx.strokeStyle = ink(0.7 + 0.3 * on);
+                    ctx.beginPath();
+                    ctx.moveTo(g0 - 0.01, top - 0.025);
+                    ctx.lineTo(g0, top);
+                    for (let i = 0; i < 7; i++) {
+                        const x = g0 + i * step, down = i % 2 === 0, y = down ? bot : top;
+                        ctx.lineTo(x, y);
+                        if (i < 6) ctx.arc(x + step / 2, y, step / 2, Math.PI, 0, down);
+                    }
+                    ctx.lineTo(g0 + 6 * step + 0.008, bot + 0.016);
+                    ctx.stroke();
+                    const lig = τ < 6 ? ease(phase(τ, 0, 0.8)) : 1 - ease(phase(τ, 9.0, 10.4));
+                    if (lig > 0) {
+                        const ly = lerp(-0.04, top + 0.01, lig), d = 0.013;
+                        polyline(ctx, [[gc, ly - d], [gc + d, ly], [gc, ly + d], [gc - d, ly]]);
+                        ctx.closePath();
+                        solid(ctx, 0.25 + 0.6 * on, 0.95, 1.1 * px);
+                    }
+
+                    // PLCε as a blob, since its full structure is unknown; the active site faces the membrane.
+                    const recruit = ease(phase(τ, 1.2, 2.0)) * (1 - ease(phase(τ, 10.6, 11.6)));
+                    const ey = lerp(yIn + 0.3, yIn + 0.135, recruit) + 0.006 * Math.sin(t * 1.4) * (1 - recruit);
+                    protein(ctx, ex, ey, r, t, 1.3);
+                    solid(ctx, 0.12, 0.9, 1.3 * px);
+                    const site = phase(τ, 2.0, 2.3) * (1 - phase(τ, 10.2, 10.5));
+                    if (site > 0) {
+                        disc(ctx, xa, ey - r * 0.8, 0.011);
+                        ctx.fillStyle = ink(0.95 * site);
+                        ctx.fill();
+                    }
+
+                    for (const s of released) {
+                        if (s > 3.2) continue;
+                        const x = xa - 0.26 * (1 - Math.exp(-2 * s)), y = yIn + 0.012 + 0.24 * (1 - Math.exp(-0.8 * s));
+                        inositol(ctx, x, y, s * 1.5, 1 - phase(s, 1.2, 3.2), px);
+                        if (s < 0.6) {
+                            disc(ctx, xa, yIn + 0.02, 0.012 + (0.05 * s) / 0.6);
+                            ctx.lineWidth = px;
+                            ctx.strokeStyle = ink(0.6 * (1 - s / 0.6));
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Union of two circles of radius r centred at x ± s (or y ± s when vertical).
+                function blob(ctx, x, y, r, s, vertical) {
+                    if (vertical) {
+                        ctx.save();
+                        ctx.translate(x, y);
+                        ctx.rotate(Math.PI / 2);
+                        blob(ctx, 0, 0, r, s);
+                        ctx.restore();
+                        return;
+                    }
+                    ctx.beginPath();
+                    if (s >= r) {
+                        ctx.arc(x - s, y, r, 0, TAU);
+                        ctx.moveTo(x + s + r, y);
+                        ctx.arc(x + s, y, r, 0, TAU);
+                        return;
+                    }
+                    const th = Math.acos(s / r);
+                    ctx.arc(x - s, y, r, th, TAU - th);
+                    ctx.arc(x + s, y, r, Math.PI + th, 3 * Math.PI - th);
+                    ctx.closePath();
+                }
+
+                // The cell runs `lag` seconds behind so the GPCR and PLCε steps come first. Returns where the
+                // PLCε site sits in panel coordinates, so the close-up can be tied to it.
+                function cell(ctx, px, t, τ) {
+                    const τc = τ - lag;
+                    const grow = ease(phase(τc, 5.2, 6.2)), z = ease(phase(τc, 9.8, 11.8));
+                    const ks = [phase(τc, 6.2, 7.3), phase(τc, 7.5, 8.5), phase(τc, 8.7, 9.7)].map(ease);
+
+                    // Cells from finished rounds, plus the split in progress.
+                    let cells = [[0.5, 0.5]], R = lerp(R0, R1, grow), s = 0, vert = 0;
+                    const split = () => {
+                        cells = cells.flatMap(([x, y]) => (vert ? [[x, y - s], [x, y + s]] : [[x - s, y], [x + s, y]]));
+                        s = 0;
+                    };
+                    rounds.forEach(([d, v, r], j) => {
+                        if (ks[j] <= 0) return;
+                        if (s > 0) split();
+                        R = lerp(j ? rounds[j - 1][2] : R1, r, ks[j]);
+                        s = d * ks[j];
+                        vert = v;
+                    });
+                    if (ks[2] >= 1) split();
+                    const rn = R * lerp(n0 / R0, 0.095 / R1, grow * (1 - ks[0]));
+
+                    // The view settles on one of the eight daughters, which becomes the next cycle's cell.
+                    const m = lerp(1, R0 / r3, z), cx = lerp(0.5, home[0], z), cy = lerp(0.5, home[1], z);
+                    ctx.save();
+                    ctx.translate(0.5, 0.5);
+                    ctx.scale(m, m);
+                    ctx.translate(-cx, -cy);
+                    px /= m;
+
+                    const calm = clamp(1 - phase(τc, 4.8, 5.6) + phase(τc, 10, 11.8));
+                    const glow = phase(τc, 4.8, 5.2) * (1 - phase(τc, 9.2, 9.8));
+                    const early = τc < 7, [ex, ey] = early ? [0.5, 0.5] : home;
+                    const Rh = early ? R : r3, sc = Rh / R0;
+                    const at = (a, r) => [ex + r * Math.cos(a), ey + r * Math.sin(a)];
+
+                    for (const [x, y] of cells) {
+                        blob(ctx, x, y, R, s, vert);
+                        solid(ctx, 0.06, 0.9, 1.4 * px);
+                    }
+
+                    // ER wrapped around the nucleus; it and the resting proteins are redrawn in the daughter as the view follows it.
+                    if (calm > 0) {
+                        ctx.lineWidth = 1.2 * px;
+                        ctx.strokeStyle = ink(0.6 * calm);
+                        ctx.beginPath();
+                        ctx.arc(ex, ey, (n0 + 0.025) * sc, -Math.PI + 0.5, -0.5);
+                        ctx.moveTo(ex + (n0 + 0.045) * sc * Math.cos(-0.5), ey + (n0 + 0.045) * sc * Math.sin(-0.5));
+                        ctx.arc(ex, ey, (n0 + 0.045) * sc, -0.5, -Math.PI + 0.5, true);
+                        ctx.stroke();
+                    }
+
+                    for (const [x, y] of cells) {
+                        blob(ctx, x, y, rn, s, vert);
+                        solid(ctx, 0.12 + 0.45 * glow, 0.85 + 0.15 * glow, 1.2 * px);
+                    }
+
+                    // GPCR, G protein and PLCε on the membrane.
+                    if (calm > 0) {
+                        ctx.globalAlpha = calm;
+                        const on = early ? phase(τ, 0.6, 0.9) : 0;
+                        ctx.lineWidth = 1.3 * px;
+                        ctx.strokeStyle = ink(0.75 + 0.25 * on);
+                        ctx.beginPath();
+                        for (let j = -1.5; j <= 1.5; j++) {
+                            const a = aG + j * 0.026;
+                            ctx.moveTo(...at(a, Rh - 0.024 * sc));
+                            ctx.lineTo(...at(a, Rh + 0.024 * sc));
+                        }
+                        ctx.stroke();
+                        const lig = early ? ease(phase(τ, 0, 0.8)) : 0;
+                        if (lig > 0) {
+                            const [lx, ly] = at(aG, Rh + lerp(0.16, 0.04, lig) * sc), d = 0.014 * sc;
+                            polyline(ctx, [[lx, ly - d], [lx + d, ly], [lx, ly + d], [lx - d, ly]]);
+                            ctx.closePath();
+                            ctx.globalAlpha = calm * phase(τ, 0, 0.3);
+                            solid(ctx, 0.85, 0.95, 1.1 * px);
+                            ctx.globalAlpha = calm;
+                        }
+                        const ga = early ? lerp(aG, aP + 0.17, ease(phase(τ, 0.8, 1.6))) : aG;
+                        disc(ctx, ...at(ga, Rh - 0.032 * sc), 0.016 * sc);
+                        solid(ctx, 0.1 + 0.7 * on, 0.9, 1.2 * px);
+                        const rec = early ? ease(phase(τ, 1.2, 2.0)) : 0, lit = early ? phase(τ, 2.0, 2.3) : 0;
+                        protein(ctx, ...at(aP, Rh - lerp(0.13, 0.038, rec) * sc), 0.024 * sc, t, 1.3);
+                        solid(ctx, 0.1 + 0.7 * lit, 0.9, 1.2 * px);
+                        ctx.globalAlpha = 1;
+                    }
+
+                    // DAG left in the membrane and IP3 drifting in to the ER.
+                    const dag = phase(τc, 0.3, 0.7) * (1 - phase(τc, 4.8, 5.6));
+                    sites.forEach((a, j) => {
+                        if (dag > 0) {
+                            const [hx, hy] = at(a, R), [tx, ty] = at(a, R - 0.035);
+                            ctx.lineWidth = px;
+                            ctx.strokeStyle = ink(0.8 * dag);
+                            polyline(ctx, [[hx + 0.008 * Math.sin(a), hy - 0.008 * Math.cos(a)], [tx, ty], [hx - 0.008 * Math.sin(a), hy + 0.008 * Math.cos(a)]]);
+                            ctx.stroke();
+                        }
+                        const go = ease(phase(τc, 0.7 + 0.15 * j, 2.4 + 0.15 * j));
+                        const fade = phase(τc, 0.5 + 0.15 * j, 0.8 + 0.15 * j) * (1 - phase(τc, 2.8, 3.6));
+                        if (fade > 0) {
+                            const [ix, iy] = at(a + 0.08 * Math.sin(τ * 3 + j) * (1 - go), lerp(R - 0.025, n0 + 0.065, go));
+                            hexagon(ctx, ix, iy, 0.015, τ * 1.2 + j);
+                            solid(ctx, 0.25 * fade, fade, 1.1 * px);
+                        }
+                    });
+
+                    // Calcium released from the ER.
+                    ctx.fillStyle = ink(0.9);
+                    for (let i = 0; i < 14; i++) {
+                        const q = (τc - 2.6 - 0.08 * i) / 1.6;
+                        if (q <= 0 || q >= 1) continue;
+                        const a = -Math.PI + 0.6 + (Math.PI - 1.2) * hash(i + 3);
+                        disc(ctx, ...at(a, n0 + 0.045 + 0.11 * ease(q) + 0.01 * hash(i + 9)), 0.0065);
+                        ctx.globalAlpha = Math.min(1, q * 6, (1 - q) * 3);
+                        ctx.fill();
+                        ctx.globalAlpha = 1;
+                    }
+
+                    // PKC moves from the cytosol onto DAG, then signals to the nucleus.
+                    const move = ease(phase(τc, 3.0, 4.0)), on = phase(τc, 3.8, 4.1);
+                    const rest = [ex + 0.2 * sc, ey - 0.07 * sc], dock = at(sites[2], R - 0.045);
+                    const pkc = early ? [lerp(rest[0], dock[0], move), lerp(rest[1], dock[1], move)] : rest;
+                    if (calm > 0) {
+                        disc(ctx, ...pkc, 0.03 * sc);
+                        solid(ctx, (0.12 + 0.7 * on * early) * calm, 0.85 * calm, 1.2 * px);
+                    }
+                    ctx.fillStyle = ink(0.9);
+                    for (let i = 0; i < 3; i++) {
+                        const q = phase(τc, 4.1 + 0.2 * i, 4.9 + 0.2 * i);
+                        if (q <= 0 || q >= 1) continue;
+                        const end = at(Math.atan2(dock[1] - ey, dock[0] - ex), n0);
+                        disc(ctx, lerp(dock[0], end[0], q), lerp(dock[1], end[1], q), 0.008);
+                        ctx.globalAlpha = Math.min(1, q * 5, (1 - q) * 5);
+                        ctx.fill();
+                        ctx.globalAlpha = 1;
+                    }
+
+                    if (z > 0) {
+                        ctx.globalAlpha = Math.min(1, 1.5 * z);
+                        ctx.globalCompositeOperation = "destination-out";
+                        ctx.fillStyle = "#000";
+                        for (const [x, y] of cells.slice(1)) {
+                            disc(ctx, x, y, r3 + 0.006);
+                            ctx.fill();
+                        }
+                        ctx.globalCompositeOperation = "source-over";
+                        ctx.globalAlpha = 1;
+                    }
+                    ctx.restore();
+
+                    // The close-up spans PLCε and the GPCR.
+                    const [sx, sy] = at((aP + aG) / 2, Rh - 0.02 * sc);
+                    return { x: 0.5 + m * (sx - cx), y: 0.5 + m * (sy - cy), size: 0.14 * sc * m, alpha: calm };
+                }
+
+                return {
+                    still: 6,
+                    period: P,
+                    cues: [
+                        [0, 2.0, "plc-signal"],
+                        [2.0, 7.0, "plc-enzyme"],
+                        [7.0, 11.6, "plc-cancer"],
+                    ],
+                    draw(ctx, t, dt, px, W) {
+                        const τ = cycle(t), half = W / 2;
+                        const box = [0.03, 0.05, half - 0.09, 0.9];
+
+                        ctx.save();
+                        ctx.beginPath();
+                        ctx.rect(...box);
+                        ctx.clip();
+                        ctx.translate(box[0], box[1]);
+                        ctx.scale(Z, Z);
+                        closeup(ctx, px / Z, t, τ, box[2] / Z);
+                        ctx.restore();
+
+                        const cs = Math.min(1.15, (0.92 * half) / span), cx = half + half / 2;
+                        ctx.save();
+                        ctx.translate(cx, 0.5);
+                        ctx.scale(cs, cs);
+                        ctx.translate(-0.5, -0.5);
+                        const spot = cell(ctx, px / cs, t, τ);
+                        ctx.restore();
+
+                        // Frame the close-up and tie it back to the PLCε site on the cell.
+                        ctx.lineWidth = px;
+                        ctx.setLineDash([3 * px, 3 * px]);
+                        ctx.strokeStyle = ink(0.35);
+                        ctx.strokeRect(...box);
+                        if (spot.alpha > 0) {
+                            const x = cx + cs * (spot.x - 0.5), y = 0.5 + cs * (spot.y - 0.5);
+                            const dw = cs * spot.size, dh = (dw * box[3]) / box[2];
+                            ctx.strokeStyle = ink(0.35 * spot.alpha);
+                            ctx.strokeRect(x - dw, y - dh, 2 * dw, 2 * dh);
+                            ctx.beginPath();
+                            ctx.moveTo(x - dw, y - dh);
+                            ctx.lineTo(box[0] + box[2], box[1]);
+                            ctx.moveTo(x - dw, y + dh);
+                            ctx.lineTo(box[0] + box[2], box[1] + box[3]);
+                            ctx.stroke();
+                        }
+                        ctx.setLineDash([]);
+                    },
+                };
+            }
+
+            // Three techniques in turn, each in its own panel: DFT on a small organic molecule, small-molecule X-ray
+            // crystallography of the same molecule, then cryo-EM from particles to a density map and a model built into it.
+            function edu() {
+                const P = 24, b = 0.1, c = [-0.2, 0.04];
+
+                // Acetophenone, skeletal: ring atoms 0-5, then carbonyl C, O and methyl C.
+                const atoms = [];
+                for (let i = 0; i < 6; i++) atoms.push([c[0] + b * Math.cos((i * TAU) / 6), c[1] + b * Math.sin((i * TAU) / 6)]);
+                const C7 = [atoms[0][0] + 0.866 * b, atoms[0][1] - 0.5 * b];
+                atoms.push(C7, [C7[0], C7[1] - b], [C7[0] + 0.866 * b, C7[1] + 0.5 * b]);
+                const bonds = [[0, 1, 1], [1, 2, 0], [2, 3, 1], [3, 4, 0], [4, 5, 1], [5, 0, 0], [0, 6, 0], [6, 7, 2], [6, 8, 0]];
+                const HOMO = [1, 0.5, -0.5, -1, -0.5, 0.5, 0.35, 0.55, 0];
+                const LUMO = [0.9, -0.45, -0.45, 0.9, -0.45, -0.45, -0.75, 0.6, 0];
+
+                const spots = [];
+                for (let i = -4; i <= 4; i++) {
+                    for (let j = -4; j <= 4; j++) {
+                        if ((i || j) && hash(i * 13.1 + j * 7.7 + 40) > 0.45) {
+                            spots.push([i / 4.6, j / 4.6, 0.9 + 2.3 * hash(i * 3.3 + j * 11.9 + 5), 0.004 + 0.007 * hash(i * 5.7 - j * 2.3 + 9)]);
+                        }
+                    }
+                }
+                // Detector face, turned slightly toward the viewer.
+                const det = (s, q) => [0.31 + 0.11 * s, q * (0.2 + 0.035 * (s + 1))];
+                const crystal = [[-0.06, -0.02], [-0.025, -0.055], [0.045, -0.04], [0.06, 0.015], [0.025, 0.05], [-0.045, 0.035]];
+
+                // Cryo-EM screen, and the four-subunit complex it images: three subunits in a ring with one on top.
+                const sx = 0.13, half = 0.3, si = 0.024, sm = 0.085, tilt = -0.35;
+                const subunits = [[[1, 0.3, 0], 0.85], [[-0.5, 0.3, 0.87], 0.85], [[-0.5, 0.3, -0.87], 0.85], [[0, -1.2, 0], 0.7]];
+                // Six viewing directions spread around the complex (right, left, front, back, below, above), as [ax, ay].
+                const views = [[0.94, 0.2, 0.28], [-0.9, 0.25, -0.35], [0.3, -0.25, 0.92], [-0.25, 0.3, -0.92], [0.2, 0.95, 0.24], [-0.15, -0.95, 0.27]].map(([x, y, z]) => {
+                    const l = Math.hypot(x, y, z);
+                    return [Math.atan2(y, z), Math.asin(-x / l)];
+                });
+                const rx = ([x, y, z], a) => [x, y * Math.cos(a) - z * Math.sin(a), y * Math.sin(a) + z * Math.cos(a)];
+                const ry = ([x, y, z], a) => [x * Math.cos(a) + z * Math.sin(a), y, -x * Math.sin(a) + z * Math.cos(a)];
+                const view = (p, [ax, ay]) => ry(rx(p, ax), ay);
+                const unview = (p, [ax, ay]) => rx(ry(p, -ay), -ax);
+                const world = (p, θ) => rx(ry(p, θ), tilt);
+
+                // [x, y, class, in-plane angle]; each row of the micrograph holds one particle of every class.
+                const particles = [];
+                for (let i = 0; i < 18; i++) {
+                    const row = Math.floor(i / 6);
+                    particles.push([sx - 0.24 + 0.096 * (i % 6) + 0.04 * (hash(i + 80) - 0.5), -0.2 + 0.2 * row + 0.04 * (hash(i + 90) - 0.5), (5 * i + row) % 6, TAU * hash(i + 70)]);
+                }
+
+                const chain = [];
+                subunits.forEach(([[x, y, z], r], s) => {
+                    for (let k = 0; k < 4; k++) {
+                        const a = (k * Math.PI) / 2 + s;
+                        chain.push([sm * (x + 0.45 * r * Math.cos(a)), sm * (y + 0.35 * r * Math.sin(2 * a + s)), sm * (z + 0.45 * r * Math.sin(a))]);
+                    }
+                });
+
+                // The complex as seen from view j, at scale s.
+                function projection(ctx, j, s, alpha) {
+                    ctx.fillStyle = ink(alpha);
+                    for (const [p, r] of subunits) {
+                        const [x, y] = view(p, views[j]);
+                        disc(ctx, s * x, s * y, s * r);
+                        ctx.fill();
+                    }
+                }
+
+                // The 3D map as shaded spheres, back to front, with mesh lines on their near sides.
+                function map3d(ctx, px, θ, fill) {
+                    const balls = subunits
+                        .map(([p, r]) => {
+                            const q = p.map((v) => v * sm);
+                            return [q, world(q, θ), r * sm];
+                        })
+                        .sort((a, b) => a[1][2] - b[1][2]);
+                    for (const [p, [x, y, z], r] of balls) {
+                        disc(ctx, sx + x, y, r);
+                        solid(ctx, fill + 0.1 * clamp(z / sm + 0.5), 0.85, 1.2 * px);
+                        ctx.lineWidth = 0.8 * px;
+                        ctx.strokeStyle = ink(0.35);
+                        ctx.beginPath();
+                        for (let ring = 0; ring < 3; ring++) {
+                            let pen = false;
+                            for (let k = 0; k <= 32; k++) {
+                                const φ = (k * TAU) / 32;
+                                const off = ring === 2 ? [r * Math.cos(φ), r * Math.sin(φ), 0] : [r * Math.cos(φ) * (ring ? 0.8 : 1), ring ? -0.6 * r : 0, r * Math.sin(φ) * (ring ? 0.8 : 1)];
+                                const w = world([p[0] + off[0], p[1] + off[1], p[2] + off[2]], θ);
+                                if (w[2] >= z) {
+                                    if (pen) ctx.lineTo(sx + w[0], w[1]);
+                                    else ctx.moveTo(sx + w[0], w[1]);
+                                    pen = true;
+                                } else pen = false;
+                            }
+                        }
+                        ctx.stroke();
+                    }
+                }
+
+                function skeleton(ctx, px, lw) {
+                    ctx.lineWidth = lw * px;
+                    ctx.strokeStyle = ink(0.9);
+                    ctx.beginPath();
+                    for (const [i, j, d] of bonds) {
+                        const [x1, y1] = atoms[i], [x2, y2] = atoms[j];
+                        ctx.moveTo(x1, y1);
+                        ctx.lineTo(x2, y2);
+                        if (d === 1) {
+                            const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, L = Math.hypot(c[0] - mx, c[1] - my);
+                            const ox = (0.02 * (c[0] - mx)) / L, oy = (0.02 * (c[1] - my)) / L;
+                            ctx.moveTo(lerp(x1, x2, 0.2) + ox, lerp(y1, y2, 0.2) + oy);
+                            ctx.lineTo(lerp(x1, x2, 0.8) + ox, lerp(y1, y2, 0.8) + oy);
+                        }
+                        if (d === 2) {
+                            ctx.moveTo(x1 + 0.016, y1);
+                            ctx.lineTo(x2 + 0.016, y2);
+                        }
+                    }
+                    ctx.stroke();
+                }
+
+                // Half-headed arrow for an electron's spin.
+                function electron(ctx, px, x, y, dir) {
+                    const tip = y - 0.03 * dir;
+                    ctx.lineWidth = 1.1 * px;
+                    ctx.strokeStyle = ink(0.9);
+                    polyline(ctx, [[x, y + 0.03 * dir], [x, tip], [x - 0.01 * dir, tip + 0.014 * dir]]);
+                    ctx.stroke();
+                }
+
+                function dft(ctx, px, t, u) {
+                    // SCF: density contours overshoot and settle as the iterations converge.
+                    const iso = phase(u, 0.3, 0.7) * (1 - phase(u, 2.0, 2.5));
+                    if (iso > 0) {
+                        const d = Math.max(0, (u - 0.5) / 0.22), n = Math.floor(d);
+                        const osc = (k) => 0.45 * Math.pow(-0.65, k);
+                        const e = lerp(osc(n), osc(n + 1), ease(clamp((d - n) / 0.5)));
+                        [0.085, 0.052].forEach((r0, j) => {
+                            const r = r0 * (1 + (j ? -e : e)), w = 1.2 * px;
+                            ctx.beginPath();
+                            for (const [x, y] of atoms) {
+                                ctx.moveTo(x + r, y);
+                                ctx.arc(x, y, r, 0, TAU);
+                            }
+                            ctx.lineWidth = w;
+                            ctx.strokeStyle = ink((j ? 0.75 : 0.45) * iso);
+                            ctx.stroke();
+                            ctx.beginPath();
+                            for (const [x, y] of atoms) {
+                                ctx.moveTo(x + r - w / 2, y);
+                                ctx.arc(x, y, r - w / 2, 0, TAU);
+                            }
+                            ctx.globalCompositeOperation = "destination-out";
+                            ctx.fillStyle = "#000";
+                            ctx.fill();
+                            ctx.globalCompositeOperation = "source-over";
+                        });
+                    }
+
+                    // HOMO, then LUMO: lobe size is the coefficient, filled or open is its sign.
+                    const g = ease(phase(u, 2.2, 2.7)) * (1 - ease(phase(u, 5.1, 5.7)));
+                    const m = ease(phase(u, 3.6, 4.1));
+                    if (g > 0) {
+                        atoms.forEach(([x, y], i) => {
+                            const cf = lerp(HOMO[i], LUMO[i], m), r = 0.05 * Math.abs(cf) * g;
+                            if (r < 0.002) return;
+                            disc(ctx, x, y, r);
+                            solid(ctx, cf > 0 ? 0.35 : 0, 0.9, 1.1 * px);
+                        });
+                    }
+                    skeleton(ctx, px, 1.4);
+                    disc(ctx, ...atoms[7], 0.017);
+                    solid(ctx, 0.85, 0.95, px);
+
+                    // Energy levels, with an electron promoted from the HOMO to the LUMO.
+                    const lv = [0.27, 0.17, 0.07, -0.08, -0.18];
+                    const hi = [0, 0, phase(u, 2.2, 2.6) * (1 - phase(u, 3.8, 4.2)), phase(u, 3.8, 4.2) * (1 - phase(u, 5.1, 5.6)), 0];
+                    ctx.lineWidth = px;
+                    ctx.strokeStyle = ink(0.4);
+                    polyline(ctx, [[0.17, 0.32], [0.17, -0.25]]);
+                    ctx.moveTo(0.155, -0.225);
+                    ctx.lineTo(0.17, -0.25);
+                    ctx.lineTo(0.185, -0.225);
+                    ctx.stroke();
+                    lv.forEach((y, i) => {
+                        ctx.lineWidth = (1.2 + 0.8 * hi[i]) * px;
+                        ctx.strokeStyle = ink(0.55 + 0.45 * hi[i]);
+                        polyline(ctx, [[0.22, y], [0.36, y]]);
+                        ctx.stroke();
+                    });
+                    const up = ease(phase(u, 3.8, 4.3)) * (1 - ease(phase(u, 5.1, 5.7)));
+                    for (let i = 0; i < 3; i++) {
+                        electron(ctx, px, 0.27, i === 2 ? lerp(lv[2], lv[3], up) : lv[i], 1);
+                        electron(ctx, px, 0.31, lv[i], -1);
+                    }
+                }
+
+                function xray(ctx, px, t, u, A) {
+                    const beam = phase(u, 0.3, 0.7) * (1 - phase(u, 3.2, 3.5)), reach = ease(phase(u, 0.3, 0.7));
+                    const o = ease(phase(u, 3.4, 4.0)) * (1 - ease(phase(u, 5.1, 5.7)));
+                    const fade = 1 - phase(u, 5.1, 5.7);
+
+                    polyline(ctx, [det(-1, -1), det(1, -1), det(1, 1), det(-1, 1)]);
+                    ctx.closePath();
+                    solid(ctx, 0.06, 0.7, 1.2 * px);
+
+                    // Reflections build up on the detector as the crystal turns through the beam.
+                    for (const [s, q, ta, r] of spots) {
+                        if (u < ta) continue;
+                        const [x, y] = det(s, q), flash = Math.exp(-(u - ta) * 6);
+                        if (beam > 0) {
+                            ctx.lineWidth = px;
+                            ctx.strokeStyle = ink(0.5 * flash * beam);
+                            polyline(ctx, [[-0.12, 0], [x, y]]);
+                            ctx.stroke();
+                        }
+                        disc(ctx, x, y, r * (1 + 1.5 * flash));
+                        ctx.fillStyle = ink(0.9 * fade * phase(u, ta, ta + 0.05));
+                        ctx.fill();
+                    }
+
+                    if (beam > 0) {
+                        ctx.lineWidth = 1.6 * px;
+                        ctx.strokeStyle = ink(0.85 * beam);
+                        polyline(ctx, [[-0.39, 0], [lerp(-0.39, 0.31, reach), 0]]);
+                        ctx.stroke();
+                    }
+                    disc(ctx, ...det(0, 0), 0.012);
+                    solid(ctx, 0.9, 0.9, px);
+                    ctx.beginPath();
+                    ctx.rect(-0.47, -0.035, 0.08, 0.07);
+                    solid(ctx, 0.15, 0.85, 1.2 * px);
+
+                    const φ = ease(phase(u, 0.8, 3.3)) * fade;
+                    if (o < 1) {
+                        ctx.save();
+                        ctx.translate(-0.12, 0);
+                        ctx.rotate(φ);
+                        ctx.scale(1 + 1.5 * o, 1 + 1.5 * o);
+                        ctx.globalAlpha = A * (1 - o);
+                        polyline(ctx, crystal);
+                        ctx.closePath();
+                        solid(ctx, 0.2, 0.9, (1.2 * px) / (1 + 1.5 * o));
+                        ctx.lineWidth = (0.8 * px) / (1 + 1.5 * o);
+                        ctx.strokeStyle = ink(0.45);
+                        polyline(ctx, [[-0.04, -0.035], [0.035, 0.045]]);
+                        ctx.moveTo(-0.01, -0.05);
+                        ctx.lineTo(0.05, -0.005);
+                        ctx.moveTo(-0.055, 0.0);
+                        ctx.lineTo(0.0, 0.045);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+
+                    // The solved structure as thermal ellipsoids.
+                    if (o > 0) {
+                        const s = lerp(0.3, 1, o);
+                        ctx.save();
+                        ctx.translate(-0.12, 0);
+                        ctx.scale(s, s);
+                        ctx.translate(0.12, 0);
+                        ctx.globalAlpha = A * o;
+                        skeleton(ctx, px / s, 2.2);
+                        atoms.forEach(([x, y], i) => {
+                            const O = i === 7, rx = (O ? 0.03 : 0.024) * (0.9 + 0.2 * hash(i + 20)), ry = rx * (0.6 + 0.25 * hash(i + 30));
+                            const rot = TAU * hash(i + 40) + 0.15 * Math.sin(t * 0.8 + i);
+                            ctx.beginPath();
+                            ctx.ellipse(x, y, rx, ry, rot, 0, TAU);
+                            solid(ctx, O ? 0.55 : 0.15, 0.95, (1.1 * px) / s);
+                            ctx.lineWidth = (0.8 * px) / s;
+                            ctx.strokeStyle = ink(0.6);
+                            ctx.beginPath();
+                            ctx.moveTo(x - rx * Math.cos(rot), y - rx * Math.sin(rot));
+                            ctx.lineTo(x + rx * Math.cos(rot), y + rx * Math.sin(rot));
+                            ctx.moveTo(x + ry * Math.cos(rot + Math.PI / 2), y + ry * Math.sin(rot + Math.PI / 2));
+                            ctx.ellipse(x, y, ry, rx * 0.35, rot + Math.PI / 2, 0, Math.PI);
+                            ctx.stroke();
+                        });
+                        ctx.restore();
+                    }
+                }
+
+                // Microscope on the left; everything it produces plays out on the screen to its right.
+                function cryo(ctx, px, t, u, A) {
+                    const beam = phase(u, 0.3, 0.6) * (1 - phase(u, 2.0, 2.4)), reach = ease(phase(u, 0.3, 0.9));
+
+                    ctx.beginPath();
+                    ctx.rect(-0.41, -0.4, 0.1, 0.76);
+                    solid(ctx, 0.06, 0.75, 1.2 * px);
+                    ctx.beginPath();
+                    ctx.rect(-0.39, -0.46, 0.06, 0.06);
+                    solid(ctx, 0.3, 0.85, 1.2 * px);
+                    for (const y of [-0.24, 0.0, 0.2]) {
+                        ctx.beginPath();
+                        ctx.rect(-0.445, y - 0.025, 0.17, 0.05);
+                        solid(ctx, 0.15, 0.8, 1.1 * px);
+                    }
+                    ctx.beginPath();
+                    ctx.rect(-0.43, 0.36, 0.14, 0.05);
+                    solid(ctx, 0.35, 0.85, 1.1 * px);
+
+                    // Beam: condensed onto the sample, then magnified onto the detector.
+                    if (beam > 0) {
+                        const env = [[-0.4, 0.003], [-0.24, 0.03], [-0.08, 0.018], [0.0, 0.026], [0.1, 0.003], [0.2, 0.02], [0.36, 0.036]];
+                        const end = lerp(-0.4, 0.36, reach);
+                        ctx.save();
+                        ctx.beginPath();
+                        ctx.rect(-0.5, -0.41, 0.3, end + 0.41);
+                        ctx.clip();
+                        ctx.beginPath();
+                        env.forEach(([y, w]) => ctx.lineTo(-0.36 - w, y));
+                        for (let j = env.length - 1; j >= 0; j--) ctx.lineTo(-0.36 + env[j][1], env[j][0]);
+                        ctx.closePath();
+                        ctx.fillStyle = ink(0.35 * beam);
+                        ctx.fill();
+                        ctx.fillStyle = ink(0.9 * beam);
+                        for (let j = 0; j < 8; j++) {
+                            const y = -0.4 + ((t * 0.5 + j / 8) % 1) * 0.76;
+                            disc(ctx, -0.36 + 0.008 * Math.sin(j * 2.3 + t), y, 0.004);
+                            ctx.fill();
+                        }
+                        ctx.restore();
+                    }
+                    ctx.lineWidth = 2 * px;
+                    ctx.strokeStyle = ink(0.95);
+                    polyline(ctx, [[-0.39, -0.08], [-0.33, -0.08]]);
+                    ctx.stroke();
+
+                    // Screen, tied to the detector.
+                    ctx.beginPath();
+                    ctx.rect(sx - half, -half, 2 * half, 2 * half);
+                    solid(ctx, 0.05, 0.5, 1.2 * px);
+                    ctx.setLineDash([3 * px, 3 * px]);
+                    ctx.lineWidth = px;
+                    ctx.strokeStyle = ink(0.35);
+                    polyline(ctx, [[-0.29, 0.36], [sx - half, -half]]);
+                    ctx.moveTo(-0.29, 0.41);
+                    ctx.lineTo(sx - half, half);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.rect(sx - half, -half, 2 * half, 2 * half);
+                    ctx.clip();
+
+                    // Micrograph exposes while the beam is on.
+                    const expo = ease(phase(u, 0.9, 1.6)) * (1 - ease(phase(u, 2.9, 3.4)));
+                    if (expo > 0) {
+                        ctx.fillStyle = ink(0.3 * expo);
+                        for (let i = 0; i < 60; i++) {
+                            disc(ctx, sx - half + 0.02 + (2 * half - 0.04) * hash(i + 300), -half + 0.02 + (2 * half - 0.04) * hash(i + 400), 0.003);
+                            ctx.fill();
+                        }
+                    }
+
+                    // Class tiles: each one averages the particles seen from one direction, so it sharpens as members arrive.
+                    const lift = ease(phase(u, 5.0, 6.2)), conv = ease(phase(u, 6.8, 8.0)), gone = 1 - phase(u, 10.6, 11.2);
+                    const θ = 0.45 * u, D = lerp(0.21, 0, conv), grow = lerp(1, sm / si, conv);
+                    const sharp = views.map((_, j) => {
+                        let n = 0;
+                        particles.forEach(([, , c], i) => c === j && (n += phase(u, 3.4 + 0.08 * i, 3.5 + 0.08 * i)));
+                        return n / 3;
+                    });
+                    const tileAt = (j) => {
+                        const e1 = world(unview([1, 0, 0], views[j]), θ), e2 = world(unview([0, 1, 0], views[j]), θ);
+                        const C = world(unview([0, 0, D], views[j]), θ);
+                        const flat = [1, 0, 0, 1, sx + 0.19 * ((j % 3) - 1), j < 3 ? -0.1 : 0.1];
+                        const deep = [e1[0] * grow, e1[1] * grow, e2[0] * grow, e2[1] * grow, sx + C[0], C[1]];
+                        return { m: flat.map((v, i) => lerp(v, deep[i], lift)), z: lift * C[2] };
+                    };
+                    const tiles = views.map((_, j) => tileAt(j));
+                    const drawTile = (j) => {
+                        const a = phase(u, 2.8, 3.1) * (1 - conv) * gone;
+                        if (a <= 0) return;
+                        const { m } = tiles[j], sc = Math.max(0.3, Math.hypot(m[0], m[1]));
+                        ctx.save();
+                        ctx.globalAlpha = A * a;
+                        ctx.transform(...m);
+                        ctx.beginPath();
+                        ctx.rect(-0.075, -0.075, 0.15, 0.15);
+                        ctx.fillStyle = ink(0.06);
+                        ctx.fill();
+                        ctx.lineWidth = px / sc;
+                        ctx.strokeStyle = ink(0.6);
+                        ctx.stroke();
+                        ctx.fillStyle = ink(0.25 * (1 - sharp[j]));
+                        for (let k = 0; k < 10; k++) {
+                            disc(ctx, -0.065 + 0.13 * hash(j * 10 + k + 500), -0.065 + 0.13 * hash(j * 10 + k + 600), 0.003);
+                            ctx.fill();
+                        }
+                        projection(ctx, j, si, 0.08 + 0.3 * sharp[j]);
+                        ctx.restore();
+                    };
+
+                    // Back-projection: each class image lies perpendicular to the direction it was viewed from.
+                    const rays = phase(u, 5.9, 6.4) * (1 - phase(u, 7.2, 7.8)) * gone;
+                    if (rays > 0) {
+                        ctx.setLineDash([2.5 * px, 2.5 * px]);
+                        ctx.lineWidth = px;
+                        ctx.strokeStyle = ink(0.45 * rays);
+                        ctx.beginPath();
+                        views.forEach((v) => {
+                            const p = world(unview([0, 0, D], v), θ), q = world(unview([0, 0, -0.2], v), θ);
+                            ctx.moveTo(sx + p[0], p[1]);
+                            ctx.lineTo(sx + q[0], q[1]);
+                        });
+                        ctx.stroke();
+                        ctx.setLineDash([]);
+                    }
+
+                    const order = views.map((_, j) => j).sort((a, b) => tiles[a].z - tiles[b].z);
+                    order.filter((j) => tiles[j].z < 0).forEach(drawTile);
+
+                    // Consensus map, then the chain built into it.
+                    const map = ease(phase(u, 6.6, 7.8)) * gone;
+                    if (map > 0) {
+                        ctx.globalAlpha = A * map;
+                        map3d(ctx, px, θ, u > 7.8 ? lerp(0.22, 0.08, phase(u, 7.8, 8.4)) : 0.22);
+                        ctx.globalAlpha = A;
+                    }
+                    order.filter((j) => tiles[j].z >= 0).forEach(drawTile);
+
+                    const pts = chain.map((p) => world(p, θ));
+                    pts.forEach(([x, y], i) => {
+                        const ui = 7.9 + 0.13 * i, a = phase(u, ui, ui + 0.15) * gone;
+                        if (i > 0) {
+                            const g = phase(u, ui - 0.1, ui);
+                            if (g > 0 && gone > 0) {
+                                const [x0, y0] = pts[i - 1];
+                                ctx.lineWidth = 1.6 * px;
+                                ctx.strokeStyle = ink(0.85 * gone);
+                                polyline(ctx, [[sx + x0, y0], [sx + lerp(x0, x, g), lerp(y0, y, g)]]);
+                                ctx.stroke();
+                            }
+                        }
+                        if (a <= 0) return;
+                        ctx.globalAlpha = A * gone;
+                        disc(ctx, sx + x, y, 0.011 * ease(a));
+                        solid(ctx, hash(i * 7.3 + 3) > 0.3 ? 0.9 : 0, 0.95, 1.1 * px);
+                        ctx.globalAlpha = A;
+                    });
+
+                    // Particles: projections of the same complex at random in-plane angles, picked, then aligned into their classes.
+                    particles.forEach(([x0, y0, c, ψ], i) => {
+                        const f = ease(phase(u, 2.9 + 0.08 * i, 3.5 + 0.08 * i)), a = u < 2.9 ? phase(u, 0.9, 1.6) : 1 - phase(f, 0.75, 1);
+                        if (a <= 0) return;
+                        const [, , , , tx, ty] = tiles[c].m;
+                        const x = lerp(x0, tx, f), y = lerp(y0, ty, f);
+                        ctx.save();
+                        ctx.globalAlpha = A * a;
+                        ctx.translate(x, y);
+                        ctx.rotate(ψ * (1 - f));
+                        projection(ctx, c, lerp(0.02, si, f), 0.28);
+                        ctx.restore();
+                        const pick = phase(u, 1.8 + 0.05 * i, 1.9 + 0.05 * i) * (1 - phase(u, 2.8, 3.0));
+                        if (pick > 0) {
+                            ctx.setLineDash([2.5 * px, 2.5 * px]);
+                            ctx.lineWidth = px;
+                            ctx.strokeStyle = ink(0.85 * pick);
+                            disc(ctx, x0, y0, 0.042);
+                            ctx.stroke();
+                            ctx.setLineDash([]);
+                        }
+                    });
+                    ctx.restore();
+                }
+
+                const panels = [[dft, 0, 6, 0], [xray, 6, 6, 0.025], [cryo, 12, 12, 0]];
+
+                return {
+                    still: 3,
+                    period: P,
+                    cues: [
+                        [0.2, 5.8, "edu-dft"],
+                        [6.2, 11.8, "edu-xray"],
+                        [12.2, 19.8, "edu-cryo"],
+                        [19.8, 23.4, "edu-model"],
+                    ],
+                    draw(ctx, t, dt, px, W) {
+                        const τ = ((t % P) + P) % P, k = Math.min(W / 3, 1) * 0.96, g = 0.02;
+                        const lit = panels.map(([panel, start, dur, dx], i) => {
+                            const u = (((τ - start) % P) + P) % P;
+                            const on = u < dur ? phase(u, 0, 0.4) * (1 - phase(u, dur - 0.4, dur)) : 0, A = 0.45 + 0.55 * on;
+                            ctx.save();
+                            ctx.translate((W * (2 * i + 1)) / 6 + dx * k, 0.5);
+                            ctx.scale(k, k);
+                            ctx.globalAlpha = A;
+                            panel(ctx, px / k, t, Math.min(u, dur), A);
+                            ctx.restore();
+                            return on;
+                        });
+
+                        // Panel backdrops go underneath what has already been drawn.
+                        ctx.globalCompositeOperation = "destination-over";
+                        lit.forEach((on, i) => {
+                            ctx.beginPath();
+                            ctx.roundRect((W * i) / 3 + g, 0.03, W / 3 - 2 * g, 0.94, 0.02);
+                            ctx.fillStyle = ink(0.07 + 0.05 * on);
+                            ctx.fill();
+                        });
+                        ctx.globalCompositeOperation = "source-over";
+                    },
+                };
+            }
+
+            const ANIMS = { c1ql, micelle, plc, edu };
+            const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            document.querySelectorAll("canvas[data-anim]").forEach((canvas) => {
+                const anim = ANIMS[canvas.dataset.anim]();
+                const ctx = canvas.getContext("2d");
+                const cues = (anim.cues || []).map(([from, to, name]) => [from, to, document.querySelector(`[data-cue="${name}"]`)]);
+                let S = 0, t = 0, last = 0, raf = 0, visible = false;
+
+                function render(dt) {
+                    if (!S) return;
+                    ctx.setTransform(1, 0, 0, 1, 0, 0);
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.setTransform(canvas.height, 0, 0, canvas.height, 0, 0);
+                    ctx.globalCompositeOperation = "source-over";
+                    ctx.setLineDash([]);
+                    ctx.lineCap = ctx.lineJoin = "round";
+                    anim.draw(ctx, t, dt, 1 / S, canvas.width / canvas.height);
+                }
+
+                function highlight(active) {
+                    const τ = t % anim.period;
+                    for (const [from, to, el] of cues) el.classList.toggle("on", active && τ >= from && τ < to);
+                }
+
+                function resize() {
+                    const r = canvas.getBoundingClientRect();
+                    const dpr = window.devicePixelRatio || 1;
+                    S = r.height;
+                    canvas.width = Math.round(r.width * dpr);
+                    canvas.height = Math.round(r.height * dpr);
+                    render(0);
+                }
+
+                function frame(now) {
+                    const dt = last ? Math.min((now - last) / 1000, 0.05) : 0;
+                    last = now;
+                    t += dt;
+                    render(dt);
+                    highlight(visible);
+                    raf = visible ? requestAnimationFrame(frame) : 0;
+                }
+
+                new ResizeObserver(resize).observe(canvas);
+
+                if (reduce) {
+                    t = anim.still;
+                    return;
+                }
+
+                new IntersectionObserver(([entry]) => {
+                    visible = entry.isIntersecting;
+                    if (!visible) highlight(false);
+                    if (visible && !raf) {
+                        last = 0;
+                        raf = requestAnimationFrame(frame);
+                    }
+                }).observe(canvas);
+            });
+        })();
+    </script>
 </body>
 
 </html>
