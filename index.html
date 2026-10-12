@@ -5,12 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sarthak</title>
+    <meta name="description" content="Sarthak Mohanty works on the structure and function of C1QL proteins, which help neurons form and maintain synapses." />
+    <meta name="theme-color" content="#fb6b0c" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#2a2a2a" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://sarthakmohanty.me/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sarthakmohanty.me/" />
+    <meta property="og:title" content="Sarthak Mohanty" />
+    <meta property="og:description" content="Sarthak Mohanty works on the structure and function of C1QL proteins, which help neurons form and maintain synapses." />
+    <meta property="og:image" content="https://sarthakmohanty.me/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Line drawing of C1QL proteins bridging the two membranes of a synapse, in white on orange." />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <style>
         * {
             margin: 0;
@@ -119,7 +129,7 @@
 
         .acquisition {
             font-size: 12px;
-            opacity: 0.7;
+            opacity: 0.85;
             font-weight: 300;
             font-style: italic;
             padding-right: 0.2em;
@@ -166,7 +176,7 @@
             font-size: 12.5px;
             line-height: 1.55;
             font-style: italic;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .fig-label {
@@ -175,6 +185,40 @@
             letter-spacing: 0.3px;
             color: rgba(255, 255, 255, 0.95);
             margin-right: 0.2em;
+        }
+
+        figcaption[data-level="tech"] .plain,
+        figcaption:not([data-level="tech"]) .tech {
+            display: none;
+        }
+
+        .level {
+            font-style: normal;
+            font-size: 11px;
+            margin-right: 0.3em;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .level button {
+            font: inherit;
+            color: inherit;
+            background: none;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            text-underline-offset: 3px;
+            transition: color 0.3s ease, text-decoration-color 0.3s ease;
+        }
+
+        .level button:hover,
+        .level button[aria-pressed="true"] {
+            color: white;
+        }
+
+        .level button[aria-pressed="true"] {
+            text-decoration-color: currentColor;
         }
 
         figcaption .cue {
@@ -317,14 +361,14 @@
                         <p>Currently, I work on the structure and function of complement component 1q-like (C1QL) proteins, which help neurons in the brain form and maintain the chemical junctions between them. My work in the Ressl lab aims to understand how these proteins assemble into the complexes that engage their receptors which are genetically linked to schizophrenia, bipolar disorder, and addiction. Because so many approved drugs act on this family of receptors, a structural picture of this interaction could point toward new treatments for psychiatric disorders that remain difficult to manage.</p>
                         <figure>
                             <canvas class="figure" data-anim="c1ql" aria-hidden="true"></canvas>
-                            <figcaption><span class="fig-label">Figure 1.</span> Left, a close-up of the synapse boxed at right, where an axon terminal of one neuron meets a dendritic spine of another. <span class="cue" data-cue="c1ql-ligand">C1QL trimers pair into hexamers that are secreted into the synaptic cleft and anchor to the presynaptic membrane.</span> <span class="cue" data-cue="c1ql-receptor">One binds the N-terminal domain of an adhesion G protein-coupled receptor (aGPCR)</span> <span class="cue" data-cue="c1ql-synapse">and pulls the postsynaptic membrane closer; its presynaptic partner (dashed) is not yet known.</span> <span class="cue" data-cue="c1ql-iglur">Others are captured by presynaptic neurexin-3 and bind kainate receptors (KARs), tetrameric ionotropic glutamate receptors, then link into higher-order assemblies (here an 18-mer) that cluster KARs at the synapse;</span> <span class="cue" data-cue="c1ql-ions">these channels open on glutamate binding and conduct monovalent cations (Na⁺ flowing in, K⁺ flowing out) and, in some subunit forms, divalent Ca²⁺.</span> aGPCRs belong to the G protein-coupled receptor superfamily, the target of roughly a third of approved drugs.</figcaption>
+                            <figcaption><span class="fig-label">Figure 1.</span> <span class="level"><button type="button" data-level="plain" aria-pressed="true">plain</button> / <button type="button" data-level="tech" aria-pressed="false">technical</button></span> <span class="plain">Left, a close-up of the chemical junction called a synapse boxed at right, where the end of one neuron meets the start of another. <span class="cue" data-cue="c1ql-ligand">C1QL proteins freely exist in the junction and anchor both sides of the junction through velcro proteins.</span> <span class="cue" data-cue="c1ql-receptor">One side binds to a cell surface receptor on the receiving side</span> <span class="cue" data-cue="c1ql-synapse">and pulls the two sides of the junction closer together, while its other side holds onto velcro proteins on the sending side.</span> <span class="cue" data-cue="c1ql-iglur">Other C1QL proteins are captured by a different set of velcro proteins and bind ion channels on the receiving side to form the chemical junction.</span> <span class="cue" data-cue="c1ql-ions">When these channels open, they conduct ions to allow signals to pass between neurons.</span> The receptor that C1QL proteins bind to on the left belongs to a superfamily that is the target of roughly a third of approved drugs.</span><span class="tech">Left, a close-up of the synapse boxed at right, where an axon terminal of one neuron meets a dendritic spine of another. <span class="cue" data-cue="c1ql-ligand">C1QL trimers pair into hexamers that are secreted into the synaptic cleft and anchor to the presynaptic membrane.</span> <span class="cue" data-cue="c1ql-receptor">One binds the N-terminal domain of an adhesion G protein-coupled receptor (aGPCR)</span> <span class="cue" data-cue="c1ql-synapse">and pulls the postsynaptic membrane closer, while its other end is held presynaptically by a neurexin or pentraxin.</span> <span class="cue" data-cue="c1ql-iglur">Others are captured by presynaptic neurexin-3 and bind kainate receptors (KARs), tetrameric ionotropic glutamate receptors, then link into higher-order assemblies (here an 18-mer) that cluster KARs at the synapse;</span> <span class="cue" data-cue="c1ql-ions">these channels open on glutamate binding and conduct monovalent cations (Na⁺ flowing in, K⁺ flowing out) and, in some subunit forms, divalent Ca²⁺.</span> aGPCRs belong to the G protein-coupled receptor superfamily, the target of roughly a third of approved drugs.</span></figcaption>
                         </figure>
                     </div>
                     <div class="project">
                         <p>I also collaborate with the Callmann group by using molecular dynamics simulations to determine how a glycopolymer we make can help poorly soluble medicines reach patients. Sugar-based polymers like ours are increasingly explored as drug carriers that could allow lower doses with fewer toxic side effects.</p>
                         <figure>
                             <canvas class="figure" data-anim="micelle" aria-hidden="true"></canvas>
-                            <figcaption><span class="fig-label">Figure 2.</span> <span class="cue" data-cue="micelle-drug">Many drugs are hydrophobic: they cross cell membranes readily but barely dissolve in water, so on their own they clump together and little reaches its target.</span> <span class="cue" data-cue="micelle-wrap">Amphiphilic glycopolymer chains wrap the drugs into a micelle.</span> <span class="cue" data-cue="micelle-zoom">Each chain has a hydrophobic block that packs around the drug in the core and a hydrophilic block of glucose units whose hydroxyl groups hydrogen-bond with the surrounding water.</span> <span class="cue" data-cue="micelle-deliver">The cell membrane takes up the micelle by endocytosis.</span> <span class="cue" data-cue="micelle-target">Inside the cell, the micelle releases its cargo and the drug binds its target protein.</span></figcaption>
+                            <figcaption><span class="fig-label">Figure 2.</span> <span class="level"><button type="button" data-level="plain" aria-pressed="true">plain</button> / <button type="button" data-level="tech" aria-pressed="false">technical</button></span> <span class="plain"><span class="cue" data-cue="micelle-drug">Many medicines slip through the outer layer of a cell easily, but before they get the chance, they clump together in water and little reaches its target.</span> <span class="cue" data-cue="micelle-wrap">A single chain of ten sugar-carrying building blocks wraps around one medicine molecule and pulls it free.</span> <span class="cue" data-cue="micelle-zoom">The backbone of the chain hugs the medicine while the sugars face outward and mix with the surrounding water.</span> <span class="cue" data-cue="micelle-deliver">The cell swallows the wrapped medicine.</span> <span class="cue" data-cue="micelle-target">Inside the cell, the chain lets go and the medicine binds the protein it was designed for.</span></span><span class="tech"><span class="cue" data-cue="micelle-drug">Many drugs are hydrophobic: they cross cell membranes readily but barely dissolve in water, so on their own they clump together and little reaches its target.</span> <span class="cue" data-cue="micelle-wrap">In our simulations, a glycopolymer 10-mer wraps around a single drug molecule.</span> <span class="cue" data-cue="micelle-zoom">Its hydrophobic backbone packs against the drug while the glucose on each of its ten repeat units faces outward, where the hydroxyl groups hydrogen-bond with the surrounding water.</span> <span class="cue" data-cue="micelle-deliver">The cell membrane takes up the wrapped drug by endocytosis.</span> <span class="cue" data-cue="micelle-target">Inside the cell, the polymer releases the drug, which binds its target protein.</span></span></figcaption>
                         </figure>
                     </div>
                 </div>
@@ -337,7 +381,7 @@
                         <p>Most recently, I worked on the structural biology of phospholipase C epsilon (PLCε), a signaling protein frequently dysregulated in cancers. This work was part of a larger effort in the Falzone lab to understand the regulatory role of phospholipases in cellular signaling pathways and how these mechanisms may eventually be targeted therapeutically.</p>
                         <figure>
                             <canvas class="figure" data-anim="plc" aria-hidden="true"></canvas>
-                            <figcaption><span class="fig-label">Figure 3.</span> Left, <span class="cue" data-cue="plc-recruit">ligand binding activates a GPCR, and the activated G protein relays a signal (through small GTPases, omitted here) that brings PLCε to the membrane,</span> <span class="cue" data-cue="plc-cleave">where it hydrolyzes PIP₂ into the second messengers IP₃ and DAG.</span> Right, the same pathway in a whole cell: <span class="cue" data-cue="plc-messengers">IP₃ releases Ca²⁺ from the endoplasmic reticulum and DAG recruits protein kinase C (PKC),</span> <span class="cue" data-cue="plc-divide">signals that converge on cell growth and division.</span> The full-length structure of PLCε is unknown, so it is drawn as a blob.</figcaption>
+                            <figcaption><span class="fig-label">Figure 3.</span> <span class="level"><button type="button" data-level="plain" aria-pressed="true">plain</button> / <button type="button" data-level="tech" aria-pressed="false">technical</button></span> <span class="plain">Left, <span class="cue" data-cue="plc-recruit">ligand binding activates a cell surface receptor and through a currently unknown process that involves binding to other cancer-associated proteins, the receptor eventually brings PLCε to the membrane,</span> <span class="cue" data-cue="plc-cleave">where it splits the molecules in the cell membrane into head and tail messengers.</span> Right, the same pathway in a whole cell: <span class="cue" data-cue="plc-messengers">the head frees calcium stored inside the cell and the tail calls in another signaling protein,</span> <span class="cue" data-cue="plc-divide">signals that end up triggering the growth and division of a cell.</span> The full-length structure of PLCε is unknown, so it is drawn as a blob. One can see how an overexpression of PLCε can lead to cancer, defined as uncontrolled cell growth and division.</span><span class="tech">Left, <span class="cue" data-cue="plc-recruit">ligand binding activates a GPCR, and the activated G protein relays a signal (through small GTPases, omitted here) that brings PLCε to the membrane,</span> <span class="cue" data-cue="plc-cleave">where it hydrolyzes PIP₂ into the second messengers IP₃ and DAG.</span> Right, the same pathway in a whole cell: <span class="cue" data-cue="plc-messengers">IP₃ releases Ca²⁺ from the endoplasmic reticulum and DAG recruits protein kinase C (PKC),</span> <span class="cue" data-cue="plc-divide">signals that converge on cell growth and division.</span> The full-length structure of PLCε is unknown, so it is drawn as a blob.</span></figcaption>
                         </figure>
                     </div>
                     <div class="project">
@@ -357,8 +401,10 @@
                 <div class="section-label">research</div>
                 <div class="section-content" style="display: flex; flex-direction: column; gap: 10px">
                     <div>
-                        <a href="thesis.pdf" target="_blank">A Map-Only Framework for Predicting Residue Placement Confidence During Cryo-EM Model Building</a>
-                        <span class="acquisition">Mohanty, S.<sup>1</sup> (2026), undergraduate thesis, accepted to a journal</span>
+                        <div>
+                            A Map-Only Framework for Predicting Residue Placement Confidence During Cryo-EM Model Building
+                        </div>
+                        <span class="acquisition">Mohanty, S.<sup>1</sup> (2026), undergraduate thesis, in press</span>
                     </div>
                     <div>
                         <a href="https://github.com/sarthaktexas/af3-matrix" target="_blank">Matrix-Based Protein–Protein Interaction Screening and Region-Aware Interface Analysis</a>
@@ -494,8 +540,8 @@
             }
 
             // Close-up of a synapse, tied to a zoomed-out view of the two neurons it joins. C1QL hexamers (two trimers joined at
-            // their N-termini) span the cleft: one binds an aGPCR and pulls the postsynaptic membrane closer, its presynaptic
-            // partner not yet known (dashed); others, captured by presynaptic neurexin-3, bind kainate receptors (KARs) and link
+            // their N-termini) span the cleft: one, held by a neurexin or pentraxin on the presynaptic surface, binds an aGPCR and
+            // pulls the postsynaptic membrane closer; others, captured by presynaptic neurexin-3, bind kainate receptors (KARs) and link
             // into an 18-mer that clusters them.
             function c1ql() {
                 const P = 12, pre = [0.05, 0.15], post = [0.6, 0.7], L = 0.06;
@@ -752,13 +798,11 @@
                         });
                         ctx.restore();
 
-                        // Presynaptic anchors: an unidentified partner on the left, neurexin-3 on the right.
+                        // Presynaptic anchors: a neurexin or pentraxin sitting on the membrane on the left, neurexin-3 on the right.
                         const dk = [0.3 - dL, nx[1], nx[0], nx[2]];
-                        ctx.setLineDash([0.008, 0.006]);
                         ctx.beginPath();
-                        ctx.ellipse(dk[0], 0.19, 0.03, 0.02, 0, 0, TAU);
-                        solid(ctx, 0.06 + 0.15 * d[0], 0.9, 1.2 * px);
-                        ctx.setLineDash([]);
+                        ctx.ellipse(dk[0], 0.185, 0.03, 0.026, 0, 0, TAU);
+                        solid(ctx, 0.12 + 0.175 * d[0], 0.85 + 0.075 * d[0], 1.2 * px);
                         nx.forEach((x, i) => neurexin(ctx, px, x, 0.5 * d[[2, 1, 3][i]]));
 
                         // Hexamers on the right link through their N-termini into an 18-mer.
@@ -775,7 +819,7 @@
                             [0.48 + 0.03 * Math.sin(t * 0.5 + 4), 0.33 + 0.02 * Math.sin(t * 0.75 + 3), 1.1 * Math.sin(t * 0.45 + 2)],
                             [1.15 + dL + 0.02 * Math.sin(t * 0.6 + 5), 0.38 + 0.02 * Math.sin(t * 0.8 + 4), Math.sin(t * 0.5 + 3)],
                         ];
-                        const anchorY = [0.21, 0.217, 0.217, 0.217], bound = [b1, b2, b3, b3];
+                        const anchorY = [0.211, 0.217, 0.217, 0.217], bound = [b1, b2, b3, b3];
                         floats.forEach(([fx, fy, fa], j) => {
                             const x = lerp(fx, dk[j], d[j]), y = lerp(fy, dockY, d[j]), a = fa * (1 - d[j]);
                             const tug = τ < 7 ? Math.sin(Math.PI * d[j]) : 0;
@@ -848,17 +892,18 @@
                 };
             }
 
-            // Drugs clump in water, glycopolymer chains wrap them into a micelle, a close-up shows water hydrating the glucose
-            // shell but not the hydrophobic core, and the membrane engulfs the micelle into the cell.
+            // Drugs clump in water, a glycopolymer 10-mer wraps one drug and carries it out of the clump, a close-up shows water
+            // hydrating the glucose shell but not the hydrophobic core, and the membrane engulfs the wrapped drug into the cell.
             function micelle() {
-                const P = 19.6, n = 9, Z = 1.4, Rc = 0.04, Rm = 0.145, h = 0.037, w = 0.21, depth = 0.37;
+                const P = 19.6, Z = 1.4, Rw = 0.052, Rm = 0.095, h = 0.037, w = 0.16, depth = 0.37;
+                // Ten repeat units over M backbone segments; the chain wraps most of the way around before its ends meet.
+                // It arrives from the lower right, away from the rest of the clump.
+                const units = 10, M = 40, L = Rw * 0.92 * TAU, θA = -Math.PI / 4;
                 let detail = 0;
                 const rv = Rm + 0.012 + h;
                 const core = [[-0.018, -0.014], [0.02, -0.012], [-0.01, 0.02], [0.022, 0.018]];
-                // Starting and final drug positions as fractions across the outside and inside of the cell.
+                // Starting drug positions as fractions across the water outside the cell.
                 const free = [[0.3, 0.27], [0.8, 0.68], [0.25, 0.8], [0.45, 0.12]];
-                const inside = [null, [0.05, 0.2], [0.3, 0.85], [0.55, 0.15]];
-                const turn = (a, b) => ((((b - a + Math.PI) % TAU) + TAU) % TAU) - Math.PI;
 
                 function drug(ctx, px, x, y, rot) {
                     ctx.save();
@@ -871,48 +916,70 @@
                     ctx.restore();
                 }
 
-                // Hydrophobic zigzag block, then a hydrophilic block carrying sugars.
-                function chain(ctx, px, t, i) {
-                    const core = [];
-                    for (let j = 0; j <= 4; j++) core.push([j * 0.01, j % 2 ? 0.007 : -0.007]);
-                    polyline(ctx, core);
+                // Backbone points from the chain's start to its end. The first `wound` fraction lies on a circle around the
+                // drugs starting at angle θ0, the rest runs off along the tangent like thread leaving a spool; `a` blends
+                // in from the free, wavy chain centred at `fc` and pointing along `fa`.
+                function backbone(t, cx, cy, θ0, wound, a, fc, fa) {
+                    const pts = [], Lw = wound * L, θe = θ0 + Lw / Rw;
+                    const ex = cx + Rw * Math.cos(θe), ey = cy + Rw * Math.sin(θe), tx = -Math.sin(θe), ty = Math.cos(θe);
+                    const dx = Math.cos(fa), dy = Math.sin(fa);
+                    for (let i = 0; i <= M; i++) {
+                        const ℓ = (i / M) * L, wave = 0.012 * Math.sin(ℓ * 25 - t * 2);
+                        let bx, by;
+                        if (ℓ <= Lw) {
+                            bx = cx + Rw * Math.cos(θ0 + ℓ / Rw);
+                            by = cy + Rw * Math.sin(θ0 + ℓ / Rw);
+                        } else {
+                            const tail = wave * clamp((ℓ - Lw) / 0.05);
+                            bx = ex + (ℓ - Lw) * tx + tail * ty;
+                            by = ey + (ℓ - Lw) * ty - tail * tx;
+                        }
+                        const fx = fc[0] + (ℓ - L / 2) * dx + wave * dy, fy = fc[1] + (ℓ - L / 2) * dy - wave * dx;
+                        pts.push([lerp(fx, bx, a), lerp(fy, by, a)]);
+                    }
+                    return pts;
+                }
+
+                // Hydrophobic zigzag backbone with a glucose on every repeat unit, on the side that faces out once wound.
+                function polymer(ctx, px, pts) {
+                    const normal = (i) => {
+                        const [ax, ay] = pts[Math.max(0, i - 1)], [bx, by] = pts[Math.min(M, i + 1)];
+                        const d = Math.hypot(bx - ax, by - ay) || 1;
+                        return [(by - ay) / d, -(bx - ax) / d];
+                    };
+                    const zig = pts.map(([x, y], i) => {
+                        const [nx, ny] = normal(i), o = i % 2 ? -0.006 : 0.006;
+                        return [x + o * nx, y + o * ny];
+                    });
+                    polyline(ctx, zig);
                     ctx.lineWidth = 1.6 * px;
                     ctx.strokeStyle = ink(0.95);
                     ctx.stroke();
 
-                    const shell = [];
-                    for (let j = 0; j <= 12; j++) {
-                        const x = 0.045 + j * 0.005;
-                        shell.push([x, 0.006 * Math.sin(x * 70 - t * 2 + i)]);
-                    }
-                    polyline(ctx, shell);
-                    ctx.lineWidth = 1.1 * px;
-                    ctx.strokeStyle = ink(0.8);
-                    ctx.stroke();
-
-                    for (const [j, side] of [[4, -1], [10, 1]]) {
-                        const [x, y] = shell[j], gy = y + side * 0.022;
+                    for (let j = 0; j < units; j++) {
+                        const i = (M / units) * j + M / units / 2, [x, y] = zig[i], [nx, ny] = normal(i);
+                        const gx = x + 0.022 * nx, gy = y + 0.022 * ny, rot = Math.atan2(ny, nx) + Math.PI;
                         ctx.beginPath();
                         ctx.moveTo(x, y);
-                        ctx.lineTo(x, y + side * 0.014);
+                        ctx.lineTo(x + 0.014 * nx, y + 0.014 * ny);
                         ctx.lineWidth = px;
                         ctx.strokeStyle = ink(0.8);
                         ctx.stroke();
-                        hexagon(ctx, x, gy, 0.008, Math.PI / 2);
+                        hexagon(ctx, gx, gy, 0.008, rot);
                         solid(ctx, 0, 0.85, px);
                         if (detail <= 0) continue;
-                        // Hydroxyl groups on the glucose ring, skipping the attachment point and the ring oxygen.
+                        // Hydroxyl groups on the glucose ring, skipping the attachment point (vertex 0) and the ring oxygen (vertex 5).
                         ctx.beginPath();
-                        for (const v of side > 0 ? [0, 1, 4, 5] : [1, 2, 3, 4]) {
-                            const a = Math.PI / 2 + (v * TAU) / 6, c = Math.cos(a), s = Math.sin(a);
-                            ctx.moveTo(x + 0.008 * c, gy + 0.008 * s);
-                            ctx.lineTo(x + 0.013 * c, gy + 0.013 * s);
+                        for (const v of [1, 2, 3, 4]) {
+                            const a = rot + (v * TAU) / 6, c = Math.cos(a), s = Math.sin(a);
+                            ctx.moveTo(gx + 0.008 * c, gy + 0.008 * s);
+                            ctx.lineTo(gx + 0.013 * c, gy + 0.013 * s);
                         }
                         ctx.strokeStyle = ink(0.8 * detail);
                         ctx.lineWidth = 0.8 * px;
                         ctx.stroke();
-                        const o = side > 0 ? 2 : 5, a = Math.PI / 2 + (o * TAU) / 6;
-                        disc(ctx, x + 0.008 * Math.cos(a), gy + 0.008 * Math.sin(a), 0.0022);
+                        const a = rot + (5 * TAU) / 6;
+                        disc(ctx, gx + 0.008 * Math.cos(a), gy + 0.008 * Math.sin(a), 0.0022);
                         ctx.fillStyle = ink(0.9 * detail);
                         ctx.fill();
                     }
@@ -1021,12 +1088,21 @@
                         protein(ctx, tx, ty, Rt, t, 2.2, Math.PI);
                         solid(ctx, 0.12 + 0.5 * bound, 0.9, 1.2 * px);
 
+                        const K = [X0 - 0.5, yc - 0.03];
+                        const home = ([ox, oy]) => [K[0] + ox * Math.cos(φ) - oy * Math.sin(φ), K[1] + ox * Math.sin(φ) + oy * Math.cos(φ)];
+
                         const scene = (τs, alpha) => {
                             const engulfed = τs >= 9.4;
-                            const cx = engulfed
-                                ? lerp(dockX + depth, X0 + 0.5, ease(phase(τs, 9.4, 10.8)))
-                                : lerp(X0 - 0.3, dockX, ease(phase(τs, 6.0, 6.8))) + depth * ease(phase(τs, 6.8, 9.4));
-                            const cy = yc + 0.012 * Math.sin(t * 0.6) * (1 - phase(τs, 5.5, 6.8));
+                            // The wrapped drug starts in the clump and is carried out to where the camera zooms in.
+                            const pull = ease(phase(τs, 3.0, 5.0)), h0 = home(core[0]);
+                            const cx = lerp(
+                                h0[0],
+                                engulfed
+                                    ? lerp(dockX + depth, X0 + 0.5, ease(phase(τs, 9.4, 10.8)))
+                                    : lerp(X0 - 0.3, dockX, ease(phase(τs, 6.0, 6.8))) + depth * ease(phase(τs, 6.8, 9.4)),
+                                pull,
+                            );
+                            const cy = lerp(h0[1], yc + 0.012 * Math.sin(t * 0.6) * (1 - phase(τs, 5.5, 6.8)), pull);
                             ctx.globalAlpha = alpha;
 
                             if (engulfed && τs < 12) {
@@ -1043,47 +1119,42 @@
                                 ctx.globalAlpha = alpha;
                             }
 
-                            core.forEach(([ox, oy], k) => {
-                                const home = [cx + ox * Math.cos(φ) - oy * Math.sin(φ), cy + ox * Math.sin(φ) + oy * Math.cos(φ)];
+                            core.forEach((o, k) => {
                                 const fw = [free[k][0] * (X0 - 0.12) + 0.015 * Math.sin(t * 0.9 + k * 2), free[k][1] * H + 0.02 * Math.sin(t * 0.7 + k)];
-                                const p = ease(phase(τs, 0.4 + 0.35 * k, 2.2 + 0.1 * k));
-                                let x = lerp(fw[0], home[0], p), y = lerp(fw[1], home[1], p);
-                                const out = ease(phase(τs, 11 + 0.15 * k, 12.8 + 0.15 * k));
+                                const p = ease(phase(τs, 0.4 + 0.35 * k, 2.2 + 0.1 * k)), to = k === 0 ? [cx, cy] : home(o);
+                                let x = lerp(fw[0], to[0], p), y = lerp(fw[1], to[1], p);
                                 let rot = k * 1.3 + 0.6 * Math.sin(t * 0.8 + k);
+                                const out = k === 0 ? ease(phase(τs, 11, 12.8)) : 0;
                                 if (out > 0) {
-                                    const to = k === 0 ? pocket : [X0 + 0.15 + inside[k][0] * (W - X0 - 0.25) + 0.012 * Math.sin(t * 0.9 + k), inside[k][1] * H + 0.015 * Math.cos(t * 0.8 + k * 2)];
-                                    [x, y] = [lerp(x, to[0], out), lerp(y, to[1], out)];
-                                    if (k === 0) rot = lerp(rot, Math.PI / 2, out);
+                                    [x, y] = [lerp(x, pocket[0], out), lerp(y, pocket[1], out)];
+                                    rot = lerp(rot, Math.PI / 2, out);
                                 }
                                 drug(ctx, px, x, y, rot);
                             });
 
-                            // Water crowds the glucose shell but stays out of the hydrophobic core.
+                            // Water crowds the glucose shell but stays out of the hydrophobic core and the clump.
                             if (detail > 0 && !engulfed) {
                                 ctx.fillStyle = ink(0.7);
                                 ctx.globalAlpha = alpha * detail;
                                 for (let i = 0; i < 90; i++) {
-                                    const r = 0.095 + 0.2 * Math.sqrt(hash(i + 60)), a = TAU * hash(i + 90);
-                                    water(ctx, cx + r * Math.cos(a) + 0.003 * Math.sin(t * 2 + i), cy + r * Math.sin(a) + 0.003 * Math.cos(t * 1.7 + i), TAU * hash(i + 120) + t * (hash(i + 150) - 0.5));
+                                    const r = 0.075 + 0.2 * Math.sqrt(hash(i + 60)), a = TAU * hash(i + 90);
+                                    const x = cx + r * Math.cos(a) + 0.003 * Math.sin(t * 2 + i), y = cy + r * Math.sin(a) + 0.003 * Math.cos(t * 1.7 + i);
+                                    if (Math.hypot(x - K[0], y - K[1]) < 0.065) continue;
+                                    water(ctx, x, y, TAU * hash(i + 120) + t * (hash(i + 150) - 0.5));
                                 }
                                 ctx.globalAlpha = alpha;
                             }
 
-                            for (let i = 0; i < n; i++) {
-                                const θ = (i * TAU) / n + φ;
-                                const fc = [0.05 + (X0 - 0.25) * hash(i + 1) + 0.012 * Math.sin(t * 0.6 + i), (0.08 + 0.84 * hash(i + 20)) * H + 0.015 * Math.sin(t * 0.5 + 2 * i)];
-                                const fa = TAU * hash(i + 40) + 0.4 * Math.sin(t * 0.4 + i);
-                                const a = ease(phase(τs, 2.6 + 0.25 * i, 4.0 + 0.25 * i));
-                                const rel = ease(phase(τs, 11 + 0.05 * i, 12.4));
-                                if (rel >= 1) continue;
-                                const r = Rc + 0.1 * rel;
-                                const bx = lerp(fc[0], cx + r * Math.cos(θ), a), by = lerp(fc[1], cy + r * Math.sin(θ), a);
-                                ctx.save();
+                            // The chain drifts up to the clump, winds around one drug, then unwinds and fades once inside the cell.
+                            const rel = ease(phase(τs, 11, 12.4));
+                            if (rel < 1) {
+                                const fc = [K[0] + 0.25 + 0.012 * Math.sin(t * 0.6), K[1] + 0.2 + 0.015 * Math.sin(t * 0.5)];
+                                const fa = θA + Math.PI / 2 + 0.15 * Math.sin(t * 0.4);
+                                const a = ease(phase(τs, 2.4, 3.2)), wound = ease(phase(τs, 3.4, 5.6)) * (1 - rel);
+                                const θ0 = θA + (τs === st ? 0.25 * Math.max(0, τ - 3.4) : 0);
                                 ctx.globalAlpha = alpha * (1 - rel);
-                                ctx.translate(bx, by);
-                                ctx.rotate(fa + turn(fa, θ) * a + 0.35 * Math.sin(Math.PI * a) * Math.sin(t * 5 + i));
-                                chain(ctx, px, t, i);
-                                ctx.restore();
+                                polymer(ctx, px, backbone(t, cx, cy, θ0, wound, a, fc, fa));
+                                ctx.globalAlpha = alpha;
                             }
 
                             ring(ctx, px, X0, yc, (τs - 9.4) / 0.8);
@@ -1981,13 +2052,21 @@
                 };
             }
 
+            document.addEventListener("click", (e) => {
+                const button = e.target.closest(".level button");
+                if (!button) return;
+                const caption = button.closest("figcaption");
+                caption.dataset.level = button.dataset.level;
+                for (const b of caption.querySelectorAll(".level button")) b.setAttribute("aria-pressed", b === button);
+            });
+
             const ANIMS = { c1ql, micelle, plc, edu };
             const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
             document.querySelectorAll("canvas[data-anim]").forEach((canvas) => {
                 const anim = ANIMS[canvas.dataset.anim]();
                 const ctx = canvas.getContext("2d");
-                const cues = (anim.cues || []).map(([from, to, name]) => [from, to, document.querySelector(`[data-cue="${name}"]`)]);
+                const cues = (anim.cues || []).map(([from, to, name]) => [from, to, document.querySelectorAll(`[data-cue="${name}"]`)]);
                 let S = 0, t = 0, last = 0, raf = 0, visible = false;
 
                 function render(dt) {
@@ -2003,7 +2082,7 @@
 
                 function highlight(active) {
                     const τ = t % anim.period;
-                    for (const [from, to, el] of cues) el.classList.toggle("on", active && τ >= from && τ < to);
+                    for (const [from, to, els] of cues) for (const el of els) el.classList.toggle("on", active && τ >= from && τ < to);
                 }
 
                 function resize() {
