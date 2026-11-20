@@ -165,10 +165,95 @@
             width: 100%;
             aspect-ratio: 3 / 1;
             margin-top: 1.2em;
+            cursor: pointer;
         }
 
         figure {
             margin: 0;
+        }
+
+        .figure-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0.55em;
+            user-select: none;
+        }
+
+        .figure-toggle {
+            font: inherit;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.75);
+            background: none;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            text-underline-offset: 3px;
+            flex-shrink: 0;
+            min-width: 2.8em;
+            text-align: left;
+            transition: color 0.3s ease, text-decoration-color 0.3s ease;
+        }
+
+        .figure-toggle:hover {
+            color: white;
+            text-decoration-color: currentColor;
+        }
+
+        .figure-track {
+            position: relative;
+            flex: 1;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            touch-action: none;
+        }
+
+        .figure-track-bar,
+        .figure-track-fill {
+            position: absolute;
+            left: 0;
+            height: 2px;
+            border-radius: 1px;
+            pointer-events: none;
+        }
+
+        .figure-track-bar {
+            right: 0;
+            background: rgba(255, 255, 255, 0.22);
+        }
+
+        .figure-track-fill {
+            width: 0%;
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        .figure-mark {
+            position: absolute;
+            top: 50%;
+            width: 2px;
+            height: 6px;
+            margin-left: -1px;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.4);
+            pointer-events: none;
+            transition: background 0.3s ease;
+        }
+
+        .figure-mark.on {
+            background: white;
+        }
+
+        .figure-time {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.65);
+            font-variant-numeric: tabular-nums;
+            flex-shrink: 0;
+            min-width: 4.6em;
+            text-align: right;
         }
 
         figcaption {
@@ -222,11 +307,17 @@
         }
 
         figcaption .cue {
+            cursor: pointer;
             transition: color 0.4s ease, text-decoration-color 0.4s ease, text-shadow 0.4s ease;
         }
 
         figcaption .cue.on {
             color: white;
+        }
+
+        figcaption .cue:hover {
+            color: white;
+            text-decoration-color: currentColor;
         }
 
         .cue {
@@ -352,49 +443,128 @@
         .video-modal {
             border: 0;
             padding: 0;
-            max-width: min(920px, calc(100vw - 32px));
+            margin: auto;
+            position: fixed;
+            inset: 0;
+            max-width: min(760px, calc(100vw - 28px));
             width: 100%;
+            height: fit-content;
+            max-height: calc(100vh - 28px);
             background: transparent;
             color: white;
+            overflow: visible;
         }
 
         .video-modal::backdrop {
-            background: rgba(0, 0, 0, 0.72);
-            backdrop-filter: blur(4px);
+            background: rgba(12, 35, 64, 0.55);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .video-modal::backdrop {
+                background: rgba(0, 0, 0, 0.62);
+            }
+        }
+
+        .video-modal[open]::backdrop {
+            animation: video-backdrop-in 0.28s ease;
+        }
+
+        .video-modal[open] .video-modal-inner {
+            animation: video-modal-in 0.28s ease;
+        }
+
+        @keyframes video-modal-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.985);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes video-backdrop-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .video-modal[open]::backdrop,
+            .video-modal[open] .video-modal-inner {
+                animation: none;
+            }
         }
 
         .video-modal-inner {
+            background: #f15a22;
+            color: white;
+            padding: 22px 22px 18px;
+            border-radius: 4px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 14px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .video-modal-inner {
+                background: #0c2340;
+                box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+            }
         }
 
         .video-modal-header {
             display: flex;
-            align-items: baseline;
+            align-items: flex-start;
             justify-content: space-between;
-            gap: 16px;
+            gap: 20px;
+        }
+
+        .video-modal-copy {
+            min-width: 0;
+        }
+
+        .video-modal-kicker {
+            font-size: 11px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            opacity: 0.72;
+            margin-bottom: 6px;
+            font-weight: 400;
         }
 
         .video-modal-title {
             font-family: "Instrument Serif", serif;
             font-style: italic;
-            font-size: 18px;
-            line-height: 1.3;
+            font-size: 22px;
+            line-height: 1.25;
+            font-weight: 400;
+        }
+
+        .video-modal-context {
+            margin-top: 8px;
+            font-size: 12.5px;
+            line-height: 1.55;
+            opacity: 0.88;
+            font-weight: 300;
         }
 
         .video-modal-close {
             font: inherit;
             font-size: 12px;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.8);
             background: none;
             border: 0;
-            padding: 0;
+            padding: 2px 0;
             cursor: pointer;
             text-decoration: underline;
             text-decoration-thickness: 1px;
             text-underline-offset: 3px;
             flex-shrink: 0;
+            transition: color 0.2s ease, text-decoration-thickness 0.2s ease;
         }
 
         .video-modal-close:hover {
@@ -402,12 +572,34 @@
             text-decoration-thickness: 2px;
         }
 
+        .video-modal-frame {
+            position: relative;
+            background: rgba(0, 0, 0, 0.22);
+            border-radius: 3px;
+            overflow: hidden;
+            line-height: 0;
+        }
+
         .video-modal video {
             display: block;
             width: 100%;
-            max-height: min(70vh, 520px);
+            max-height: min(62vh, 460px);
             background: #000;
-            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .video-modal-inner {
+                padding: 16px 16px 14px;
+                gap: 12px;
+            }
+
+            .video-modal-title {
+                font-size: 18px;
+            }
+
+            .video-modal-context {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -496,11 +688,11 @@
                         <span class="acquisition">Mohanty, S.<sup>1,2</sup>, Mojidra, R.<sup>2,3</sup>, & Falzone, M.<sup>2,3,4</sup> (2025), poster</span>
                     </div>
                     <div>
-                        <a href="media/genetic-circuit-compiler.mp4" data-video-modal data-video-title="Building a Reliable Compiler for Genetic Circuit Design">
+                        <a href="media/genetic-circuit-compiler.mp4" data-video-modal data-video-title="Building a Reliable Compiler for Genetic Circuit Design" data-video-context="Course talk for Chemical Communications at UTSA (2025), presenting a course-based research proposal on formal languages and compiler tools for burden-aware genetic circuit and pathway design.">
                             Formal Languages and Compiler Tools for Burden-Aware Genetic
                             Circuit and Pathway Design
                         </a>
-                        <span class="acquisition">Mohanty, S.<sup>1</sup> (2025), proposal · talk</span>
+                        <span class="acquisition">Mohanty, S.<sup>1</sup> (2025), proposal</span>
                     </div>
                     <div>
                         <a href="https://github.com/sarthaktexas/aleks-coins-checker" target="_blank">
@@ -523,10 +715,16 @@
     <dialog class="video-modal" id="video-modal" aria-labelledby="video-modal-title">
         <div class="video-modal-inner">
             <div class="video-modal-header">
-                <div class="video-modal-title" id="video-modal-title">Building a Reliable Compiler for Genetic Circuit Design</div>
-                <button type="button" class="video-modal-close" data-video-close>close</button>
+                <div class="video-modal-copy">
+                    <div class="video-modal-kicker">talk · utsa</div>
+                    <div class="video-modal-title" id="video-modal-title">Building a Reliable Compiler for Genetic Circuit Design</div>
+                    <p class="video-modal-context" id="video-modal-context">Course talk for Chemical Communications at UTSA (2025), presenting a course-based research proposal on formal languages and compiler tools for burden-aware genetic circuit and pathway design.</p>
+                </div>
+                <button type="button" class="video-modal-close" data-video-close aria-label="Close video">close</button>
             </div>
-            <video controls playsinline preload="metadata" src="media/genetic-circuit-compiler.mp4"></video>
+            <div class="video-modal-frame">
+                <video controls playsinline preload="metadata" src="media/genetic-circuit-compiler.mp4"></video>
+            </div>
         </div>
     </dialog>
 
@@ -2209,12 +2407,57 @@
 
             const ANIMS = { c1ql, micelle, plc, edu };
             const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const fmt = (s) => {
+                const n = Math.max(0, Math.floor(s));
+                return `${Math.floor(n / 60)}:${String(n % 60).padStart(2, "0")}`;
+            };
 
             document.querySelectorAll("canvas[data-anim]").forEach((canvas) => {
                 const anim = ANIMS[canvas.dataset.anim]();
                 const ctx = canvas.getContext("2d");
-                const cues = (anim.cues || []).map(([from, to, name]) => [from, to, document.querySelectorAll(`[data-cue="${name}"]`)]);
-                let S = 0, t = 0, last = 0, raf = 0, visible = false;
+                const cueData = anim.cues || [];
+                const cues = cueData.map(([from, to, name]) => [from, to, [...document.querySelectorAll(`[data-cue="${name}"]`)]]);
+                let S = 0, t = 0, last = 0, raf = 0, visible = false, playing = !reduce, scrubbing = false, wasPlaying = false;
+
+                const controls = document.createElement("div");
+                controls.className = "figure-controls";
+                controls.setAttribute("role", "group");
+                controls.setAttribute("aria-label", "Animation timeline");
+
+                const toggle = document.createElement("button");
+                toggle.type = "button";
+                toggle.className = "figure-toggle";
+
+                const track = document.createElement("div");
+                track.className = "figure-track";
+                track.setAttribute("role", "slider");
+                track.setAttribute("aria-label", "Scrub animation");
+                track.setAttribute("aria-valuemin", "0");
+                track.setAttribute("aria-valuemax", String(Math.round(anim.period)));
+                track.tabIndex = 0;
+
+                const bar = document.createElement("div");
+                bar.className = "figure-track-bar";
+                const fill = document.createElement("div");
+                fill.className = "figure-track-fill";
+                track.append(bar, fill);
+
+                const marks = cueData.map(([from]) => {
+                    const mark = document.createElement("div");
+                    mark.className = "figure-mark";
+                    mark.style.left = `${(from / anim.period) * 100}%`;
+                    track.append(mark);
+                    return mark;
+                });
+
+                const time = document.createElement("div");
+                time.className = "figure-time";
+                time.setAttribute("aria-hidden", "true");
+
+                controls.append(toggle, track, time);
+                canvas.insertAdjacentElement("afterend", controls);
+
+                const periodTime = () => ((t % anim.period) + anim.period) % anim.period;
 
                 function render(dt) {
                     if (!S) return;
@@ -2228,8 +2471,48 @@
                 }
 
                 function highlight(active) {
-                    const τ = t % anim.period;
+                    const τ = periodTime();
                     for (const [from, to, els] of cues) for (const el of els) el.classList.toggle("on", active && τ >= from && τ < to);
+                    marks.forEach((mark, i) => {
+                        const [from, to] = cueData[i];
+                        mark.classList.toggle("on", active && τ >= from && τ < to);
+                    });
+                }
+
+                function syncUI() {
+                    const τ = periodTime();
+                    const ratio = τ / anim.period;
+                    fill.style.width = `${ratio * 100}%`;
+                    track.setAttribute("aria-valuenow", String(Math.round(τ)));
+                    track.setAttribute("aria-valuetext", `${fmt(τ)} of ${fmt(anim.period)}`);
+                    time.textContent = `${fmt(τ)} / ${fmt(anim.period)}`;
+                    toggle.textContent = playing ? "pause" : "play";
+                    toggle.setAttribute("aria-label", playing ? "Pause animation" : "Play animation");
+                    toggle.setAttribute("aria-pressed", playing ? "true" : "false");
+                }
+
+                function seek(ratio) {
+                    t = Math.max(0, Math.min(1, ratio)) * anim.period;
+                    render(0);
+                    highlight(visible);
+                    syncUI();
+                }
+
+                function kick() {
+                    if (visible && (playing || scrubbing) && !raf) {
+                        last = 0;
+                        raf = requestAnimationFrame(frame);
+                    }
+                }
+
+                function setPlaying(next) {
+                    playing = next && !reduce;
+                    syncUI();
+                    if (playing) kick();
+                    else if (!scrubbing) {
+                        last = 0;
+                        // leave current frame up; raf stops on next tick when playing is false
+                    }
                 }
 
                 function resize() {
@@ -2239,30 +2522,101 @@
                     canvas.width = Math.round(r.width * dpr);
                     canvas.height = Math.round(r.height * dpr);
                     render(0);
+                    syncUI();
                 }
 
                 function frame(now) {
                     const dt = last ? Math.min((now - last) / 1000, 0.05) : 0;
                     last = now;
-                    t += dt;
-                    render(dt);
+                    if (playing && !scrubbing) t += dt;
+                    render(playing && !scrubbing ? dt : 0);
                     highlight(visible);
-                    raf = visible ? requestAnimationFrame(frame) : 0;
+                    syncUI();
+                    raf = visible && (playing || scrubbing) ? requestAnimationFrame(frame) : 0;
+                }
+
+                function ratioFromEvent(e) {
+                    const rect = track.getBoundingClientRect();
+                    return rect.width ? (e.clientX - rect.left) / rect.width : 0;
+                }
+
+                toggle.addEventListener("click", () => setPlaying(!playing));
+                canvas.addEventListener("click", () => setPlaying(!playing));
+
+                track.addEventListener("pointerdown", (e) => {
+                    if (e.button !== 0) return;
+                    e.preventDefault();
+                    track.setPointerCapture(e.pointerId);
+                    scrubbing = true;
+                    wasPlaying = playing;
+                    playing = false;
+                    seek(ratioFromEvent(e));
+                    kick();
+                });
+                track.addEventListener("pointermove", (e) => {
+                    if (!scrubbing) return;
+                    seek(ratioFromEvent(e));
+                });
+                const endScrub = () => {
+                    if (!scrubbing) return;
+                    scrubbing = false;
+                    setPlaying(wasPlaying);
+                };
+                track.addEventListener("pointerup", endScrub);
+                track.addEventListener("pointercancel", endScrub);
+
+                track.addEventListener("keydown", (e) => {
+                    const step = e.shiftKey ? 1 : 0.25;
+                    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+                        e.preventDefault();
+                        const dir = e.key === "ArrowRight" ? 1 : -1;
+                        seek((periodTime() + dir * step) / anim.period);
+                        setPlaying(false);
+                    } else if (e.key === "Home") {
+                        e.preventDefault();
+                        seek(0);
+                        setPlaying(false);
+                    } else if (e.key === "End") {
+                        e.preventDefault();
+                        seek(0.999);
+                        setPlaying(false);
+                    } else if (e.key === " " || e.key === "Enter") {
+                        e.preventDefault();
+                        setPlaying(!playing);
+                    }
+                });
+
+                for (const [from, , els] of cues) {
+                    for (const el of els) {
+                        el.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            seek(from / anim.period);
+                            setPlaying(false);
+                        });
+                    }
                 }
 
                 new ResizeObserver(resize).observe(canvas);
 
                 if (reduce) {
                     t = anim.still;
+                    controls.hidden = true;
+                    canvas.style.cursor = "default";
+                    syncUI();
                     return;
                 }
 
+                syncUI();
+
                 new IntersectionObserver(([entry]) => {
                     visible = entry.isIntersecting;
-                    if (!visible) highlight(false);
-                    if (visible && !raf) {
+                    if (!visible) {
+                        highlight(false);
+                        raf = 0;
                         last = 0;
-                        raf = requestAnimationFrame(frame);
+                    } else {
+                        highlight(true);
+                        kick();
                     }
                 }).observe(canvas);
             });
